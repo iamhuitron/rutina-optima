@@ -67,66 +67,66 @@ public class RoutineData {
     public static List<Block> getAllBlocks() {
         List<Block> list = new ArrayList<>();
 
-        // LUNES (Entrada 14:00 | Salida 12:00 de casa)
+        // LUNES (Salida 12:00 de casa | Clases 14:00 - 20:00)
         list.add(new Block(101, Calendar.MONDAY, "Lunes", "07:00 – 07:15", 7, 0, 7, 15, "Shock Anti-Inercia (S23 a 3m + Luz + Dead Hang)", "HGH & Sueño", "🌅", "Levántate a apagar el S23 lejos de la cama. Abre cortina, agua con sal y 2 min colgado en barra. ¡Prohibido volver a tocar la cama!"));
         list.add(new Block(102, Calendar.MONDAY, "Lunes", "07:15 – 07:50", 7, 15, 7, 50, "Entrenamiento V-Taper (Pecho & Espalda)", "Físico & Gym", "🏋️", "35 min alta densidad: Dominadas/remos invertidos, flexiones declinadas y con déficit."));
         list.add(new Block(103, Calendar.MONDAY, "Lunes", "07:50 – 08:20", 7, 50, 8, 20, "Ducha Fría/Fresca & Desayuno Anabólico", "Comida & Aseo", "🚿", "El agua fresca elimina el sueño residual y eleva dopamina +250%. 4 huevos, fruta y café."));
         list.add(new Block(104, Calendar.MONDAY, "Lunes", "08:20 – 10:50", 8, 20, 10, 50, "Trabajo Remoto (Bloque 1 de 2.5h)", "Trabajo Remoto", "💼", "2.5 horas de concentración profunda en métricas laborales."));
         list.add(new Block(105, Calendar.MONDAY, "Lunes", "10:50 – 11:40", 10, 50, 11, 40, "Cursos & Certificaciones (Práctica en PC)", "Cursos", "🎓", "50 min diarios dedicados 100% a avanzar tus cursos con mente fresca."));
-        list.add(new Block(106, Calendar.MONDAY, "Lunes", "11:40 – 12:00", 11, 40, 12, 0, "Almuerzo en casa & Alistar Mochila", "Comida & Aseo", "🍽️", "Comida completa previa al viaje y empaque de snacks para la uni."));
+        list.add(new Block(106, Calendar.MONDAY, "Lunes", "11:40 – 12:00", 11, 40, 12, 0, "Almuerzo en casa & Salida puntual 12:00", "Comida & Aseo", "🍽️", "Comida completa previa al viaje, empaque de snacks y salida a las 12:00."));
         list.add(new Block(107, Calendar.MONDAY, "Lunes", "12:00 – 14:00", 12, 0, 14, 0, "Traslado Ida (2h) — Teoría de Cursos + Lectura", "Traslado / Lectura", "📖", "45 min de videos descargados de tus cursos + 45 min de lectura en Kindle/libro."));
         list.add(new Block(108, Calendar.MONDAY, "Lunes", "14:00 – 20:00", 14, 0, 20, 0, "Universidad (Clases + Biblioteca)", "Universidad", "🏛️", "14h: Inglés | 16h: Derecho | 18h: Mate III | 19h: Prog III. En huecos (15h y 17h): liquidar tareas."));
-        list.add(new Block(109, Calendar.MONDAY, "Lunes", "20:00 – 22:30", 20, 0, 22, 30, "Traslado de Regreso (2.5h) — Siesta / Audio", "Traslado / Lectura", "🚌", "Cierra los ojos 30-40 min en el transporte para adelantar descanso ocular."));
+        list.add(new Block(109, Calendar.MONDAY, "Lunes", "20:00 – 22:30", 20, 0, 22, 30, "Traslado de Regreso (2.5h) — Siesta / Audio", "Traslado / Lectura", "🚌", "Cierra los ojos 25-30 min en el transporte para adelantar descanso ocular."));
         list.add(new Block(110, Calendar.MONDAY, "Lunes", "22:30 – 23:15", 22, 30, 23, 15, "Cena Pro-HGH, Ducha Tibia & S23 Lejos", "Comida & Aseo", "🥗", "Proteína + vegetales. Deja el S23 cargando a 3 metros de la cama con alarma 07:00."));
         list.add(new Block(111, Calendar.MONDAY, "Lunes", "23:15 – 07:00", 23, 15, 7, 0, "Sueño Profundo (5 Ciclos Completos = 7.5h)", "HGH & Sueño", "💤", "5 ciclos exactos de 90 min para despertar en fase ligera sin inercia del sueño."));
 
-        // MARTES (Entrada 15:00 | Salida 13:00 de casa)
+        // MARTES (Salida 12:00 de casa | Llegada 14:00 a Uni | Clases 15:00 - 20:00)
         list.add(new Block(201, Calendar.TUESDAY, "Martes", "07:00 – 07:15", 7, 0, 7, 15, "Shock Anti-Inercia (S23 a 3m + Luz + Dead Hang)", "HGH & Sueño", "🌅", "Párate de inmediato a apagar el S23. Luz solar directa, agua con sal y 2 min en barra."));
         list.add(new Block(202, Calendar.TUESDAY, "Martes", "07:15 – 07:50", 7, 15, 7, 50, "Entrenamiento V-Taper (Hombros 3D & Brazos)", "Físico & Gym", "🏋️", "Pike push-ups, elevaciones laterales estrictas, fondos y stomach vacuum."));
         list.add(new Block(203, Calendar.TUESDAY, "Martes", "07:50 – 08:20", 7, 50, 8, 20, "Ducha Fresca, Skincare & Desayuno", "Comida & Aseo", "🚿", "Activación térmica + desayuno rico en proteína."));
         list.add(new Block(204, Calendar.TUESDAY, "Martes", "08:20 – 10:50", 8, 20, 10, 50, "Trabajo Remoto (Bloque 2 de 2.5h)", "Trabajo Remoto", "💼", "2.5 horas de avance laboral remoto (5h acumuladas)."));
-        list.add(new Block(205, Calendar.TUESDAY, "Martes", "10:50 – 12:00", 10, 50, 12, 0, "Cursos & Certificaciones (Bloque Intensivo 1h 10m)", "Cursos", "🎓", "70 minutos enfocados en completar módulos y laboratorios de tus cursos."));
-        list.add(new Block(206, Calendar.TUESDAY, "Martes", "12:00 – 12:35", 12, 0, 12, 35, "Proyectos Personales (35 min Sprint)", "Proyectos", "💻", "Avance puntual en tu portafolio o código personal."));
-        list.add(new Block(207, Calendar.TUESDAY, "Martes", "12:35 – 13:00", 12, 35, 13, 0, "Almuerzo en casa & Salida", "Comida & Aseo", "🍽️", "Comida nutritiva antes de salir a las 13:00 rumbo a SO (15:00)."));
-        list.add(new Block(208, Calendar.TUESDAY, "Martes", "13:00 – 15:00", 13, 0, 15, 0, "Traslado Ida (2h) — Videos Cursos + Lectura", "Traslado / Lectura", "📖", "Repaso de cursos en video + lectura activa."));
-        list.add(new Block(209, Calendar.TUESDAY, "Martes", "15:00 – 20:00", 15, 0, 20, 0, "Universidad (Sistemas Op, Metodología, Inf III)", "Universidad", "🏛️", "En huecos de 16h y 18h: terminar tareas en biblioteca."));
-        list.add(new Block(210, Calendar.TUESDAY, "Martes", "20:00 – 22:30", 20, 0, 22, 30, "Traslado de Regreso (2.5h)", "Traslado / Lectura", "🚌", "Desconexión auditiva y descanso ocular."));
+        list.add(new Block(205, Calendar.TUESDAY, "Martes", "10:50 – 11:40", 10, 50, 11, 40, "Cursos & Certificaciones (Práctica en PC)", "Cursos", "🎓", "50 minutos enfocados en completar módulos y laboratorios de tus cursos."));
+        list.add(new Block(206, Calendar.TUESDAY, "Martes", "11:40 – 12:00", 11, 40, 12, 0, "Almuerzo en casa & Salida puntual 12:00", "Comida & Aseo", "🍽️", "Comida nutritiva en casa y salida fija a las 12:00."));
+        list.add(new Block(207, Calendar.TUESDAY, "Martes", "12:00 – 14:00", 12, 0, 14, 0, "Traslado Ida (2h) — Videos Cursos + Lectura", "Traslado / Lectura", "📖", "45 min de repaso de cursos en video + 45 min de lectura activa."));
+        list.add(new Block(208, Calendar.TUESDAY, "Martes", "14:00 – 15:00", 14, 0, 15, 0, "Hora de Oro en Biblioteca Uni (Cursos / Proyectos)", "Proyectos", "💻", "Llegas a las 14:00 a la facultad: 1h libre antes de Sistemas Operativos para avanzar proyectos o cursos."));
+        list.add(new Block(209, Calendar.TUESDAY, "Martes", "15:00 – 20:00", 15, 0, 20, 0, "Universidad (Sistemas Op, Metodología, Inf III)", "Universidad", "🏛️", "15h: Sistemas Op | 17h: Metodología | 19h: Inf III. Huecos de 16h y 18h: liquidar tareas."));
+        list.add(new Block(210, Calendar.TUESDAY, "Martes", "20:00 – 22:30", 20, 0, 22, 30, "Traslado de Regreso (2.5h) — Siesta 25m", "Traslado / Lectura", "🚌", "Desconexión auditiva y descanso ocular."));
         list.add(new Block(211, Calendar.TUESDAY, "Martes", "22:30 – 23:15", 22, 30, 23, 15, "Cena Pro-HGH, Ducha Tibia & S23 a 3m", "Comida & Aseo", "🥗", "Cena sin carbohidratos simples. Deja el celular lejos de la cama."));
         list.add(new Block(212, Calendar.TUESDAY, "Martes", "23:15 – 07:00", 23, 15, 7, 0, "Sueño Anabólico HGH (7.5h — 5 Ciclos)", "HGH & Sueño", "💤", "Recuperación muscular completa y pico de somatropina."));
 
-        // MIÉRCOLES (Entrada 14:00)
+        // MIÉRCOLES (Salida 12:00 de casa | Clases 14:00 - 20:00)
         list.add(new Block(301, Calendar.WEDNESDAY, "Miércoles", "07:00 – 07:15", 7, 0, 7, 15, "Shock Anti-Inercia (S23 a 3m + Luz + Dead Hang)", "HGH & Sueño", "🌅", "Levántate de inmediato, luz natural y 2 min colgado en barra."));
         list.add(new Block(302, Calendar.WEDNESDAY, "Miércoles", "07:15 – 07:50", 7, 15, 7, 50, "Entrenamiento V-Taper (Pierna & Pliometría)", "Físico & Gym", "🏋️", "Sentadillas búlgaras, saltos explosivos, pantorrillas en escalón."));
         list.add(new Block(303, Calendar.WEDNESDAY, "Miércoles", "07:50 – 08:20", 7, 50, 8, 20, "Ducha Fresca & Desayuno Alto en Proteína", "Comida & Aseo", "🚿", "Combustible limpio y activación nerviosa."));
         list.add(new Block(304, Calendar.WEDNESDAY, "Miércoles", "08:20 – 10:50", 8, 20, 10, 50, "Trabajo Remoto (Bloque 3 de 2.5h)", "Trabajo Remoto", "💼", "Avance laboral consistente (7.5h acumuladas)."));
         list.add(new Block(305, Calendar.WEDNESDAY, "Miércoles", "10:50 – 11:40", 10, 50, 11, 40, "Cursos & Certificaciones (Práctica en PC)", "Cursos", "🎓", "50 min de avance práctico en tus cursos."));
-        list.add(new Block(306, Calendar.WEDNESDAY, "Miércoles", "11:40 – 12:00", 11, 40, 12, 0, "Almuerzo & Empaque", "Comida & Aseo", "🍽️", "Comida en casa y salida puntual a las 12:00."));
+        list.add(new Block(306, Calendar.WEDNESDAY, "Miércoles", "11:40 – 12:00", 11, 40, 12, 0, "Almuerzo & Salida puntual 12:00", "Comida & Aseo", "🍽️", "Comida en casa y salida puntual a las 12:00."));
         list.add(new Block(307, Calendar.WEDNESDAY, "Miércoles", "12:00 – 14:00", 12, 0, 14, 0, "Traslado Ida (2h) — Cursos + Lectura", "Traslado / Lectura", "📖", "Teoría de cursos + lectura en transporte."));
         list.add(new Block(308, Calendar.WEDNESDAY, "Miércoles", "14:00 – 20:00", 14, 0, 20, 0, "Universidad (Clases vespertinas)", "Universidad", "🏛️", "Inglés, Derecho, Matemáticas III, Programación III."));
         list.add(new Block(309, Calendar.WEDNESDAY, "Miércoles", "20:00 – 22:30", 20, 0, 22, 30, "Traslado Vuelta (2.5h)", "Traslado / Lectura", "🚌", "Descanso mental."));
         list.add(new Block(310, Calendar.WEDNESDAY, "Miércoles", "22:30 – 23:15", 22, 30, 23, 15, "Cena Ligera, Ducha & S23 Lejos", "Comida & Aseo", "🥗", "Preparación nocturna sin pantallas en cama."));
         list.add(new Block(311, Calendar.WEDNESDAY, "Miércoles", "23:15 – 07:00", 23, 15, 7, 0, "Sueño Óptimo HGH (7.5h — 5 Ciclos)", "HGH & Sueño", "💤", "Regeneración celular."));
 
-        // JUEVES (Entrada 15:00)
+        // JUEVES (Salida 12:00 de casa | Llegada 14:00 a Uni | Clases 15:00 - 20:00)
         list.add(new Block(401, Calendar.THURSDAY, "Jueves", "07:00 – 07:15", 7, 0, 7, 15, "Shock Anti-Inercia (S23 a 3m + Luz + Dead Hang)", "HGH & Sueño", "🌅", "Levántate al sonar la alarma, agua con electrolitos y colgado en barra."));
         list.add(new Block(402, Calendar.THURSDAY, "Jueves", "07:15 – 07:50", 7, 15, 7, 50, "Entrenamiento V-Taper (Torso Denso & Postura)", "Físico & Gym", "🏋️", "Remo unilateral con mochila, flexiones diamante, vuelos posteriores."));
         list.add(new Block(403, Calendar.THURSDAY, "Jueves", "07:50 – 08:20", 7, 50, 8, 20, "Ducha Fresca, Aseo & Desayuno", "Comida & Aseo", "🚿", "Aseo matutino y nutrición."));
         list.add(new Block(404, Calendar.THURSDAY, "Jueves", "08:20 – 10:50", 8, 20, 10, 50, "Trabajo Remoto (Bloque 4 de 2.5h)", "Trabajo Remoto", "💼", "2.5h laborales (10h acumuladas)."));
-        list.add(new Block(405, Calendar.THURSDAY, "Jueves", "10:50 – 12:00", 10, 50, 12, 0, "Cursos & Certificaciones (Bloque Intensivo 1h 10m)", "Cursos", "🎓", "70 minutos de práctica técnica en tus cursos."));
-        list.add(new Block(406, Calendar.THURSDAY, "Jueves", "12:00 – 12:35", 12, 0, 12, 35, "Proyectos Personales (35 min)", "Proyectos", "💻", "Avance en tus proyectos personales."));
-        list.add(new Block(407, Calendar.THURSDAY, "Jueves", "12:35 – 13:00", 12, 35, 13, 0, "Almuerzo & Preparación", "Comida & Aseo", "🍽️", "Comida y salida 13:00 rumbo a la universidad."));
-        list.add(new Block(408, Calendar.THURSDAY, "Jueves", "13:00 – 15:00", 13, 0, 15, 0, "Traslado Ida (2h) — Cursos + Lectura", "Traslado / Lectura", "📖", "Lectura y repaso de cursos."));
-        list.add(new Block(409, Calendar.THURSDAY, "Jueves", "15:00 – 20:00", 15, 0, 20, 0, "Universidad", "Universidad", "🏛️", "Sistemas Operativos, Metodología, Informática III."));
+        list.add(new Block(405, Calendar.THURSDAY, "Jueves", "10:50 – 11:40", 10, 50, 11, 40, "Cursos & Certificaciones (Práctica en PC)", "Cursos", "🎓", "50 minutos de práctica técnica en tus cursos."));
+        list.add(new Block(406, Calendar.THURSDAY, "Jueves", "11:40 – 12:00", 11, 40, 12, 0, "Almuerzo & Salida puntual 12:00", "Comida & Aseo", "🍽️", "Comida en casa y salida fija a las 12:00 rumbo a la universidad."));
+        list.add(new Block(407, Calendar.THURSDAY, "Jueves", "12:00 – 14:00", 12, 0, 14, 0, "Traslado Ida (2h) — Cursos + Lectura", "Traslado / Lectura", "📖", "Lectura enriquecedora y videos de cursos."));
+        list.add(new Block(408, Calendar.THURSDAY, "Jueves", "14:00 – 15:00", 14, 0, 15, 0, "Hora de Oro en Biblioteca Uni (Cursos / Proyectos)", "Proyectos", "💻", "Llegas a las 14:00 a la facultad: 1h libre antes de Sistemas Operativos para proyectos o cursos."));
+        list.add(new Block(409, Calendar.THURSDAY, "Jueves", "15:00 – 20:00", 15, 0, 20, 0, "Universidad (Sistemas Op, Metodología, Inf III)", "Universidad", "🏛️", "15h: Sistemas Op | 17h: Metodología | 19h: Inf III. Huecos de 16h y 18h: liquidar tareas."));
         list.add(new Block(410, Calendar.THURSDAY, "Jueves", "20:00 – 22:30", 20, 0, 22, 30, "Traslado Vuelta (2.5h)", "Traslado / Lectura", "🚌", "Desconexión del día."));
         list.add(new Block(411, Calendar.THURSDAY, "Jueves", "22:30 – 23:15", 22, 30, 23, 15, "Cena & Rutina de Cierre (S23 a 3m)", "Comida & Aseo", "🥗", "Cena ligera rica en zinc y magnesio."));
         list.add(new Block(412, Calendar.THURSDAY, "Jueves", "23:15 – 07:00", 23, 15, 7, 0, "Sueño Máximo HGH (7.5h — 5 Ciclos)", "HGH & Sueño", "💤", "Descanso reparador."));
 
-        // VIERNES (Entrada 14:00 | Salida temprana 17:30)
+        // VIERNES (Salida 12:00 de casa | Salida temprana 17:30 de Uni)
         list.add(new Block(501, Calendar.FRIDAY, "Viernes", "07:00 – 07:30", 7, 0, 7, 30, "Shock Anti-Inercia & Movilidad Articular", "Físico & Gym", "🧘", "Despertar sin recaída, estiramientos de psoas y descompresión espinal."));
         list.add(new Block(502, Calendar.FRIDAY, "Viernes", "07:30 – 08:00", 7, 30, 8, 0, "Ducha, Aseo & Desayuno completo", "Comida & Aseo", "🚿", "Arranque del viernes."));
         list.add(new Block(503, Calendar.FRIDAY, "Viernes", "08:00 – 10:30", 8, 0, 10, 30, "Trabajo Remoto (Bloque 5 de 2.5h)", "Trabajo Remoto", "💼", "2.5h de trabajo (12.5h acumuladas entre semana)."));
-        list.add(new Block(504, Calendar.FRIDAY, "Viernes", "10:30 – 11:35", 10, 30, 11, 35, "Cursos & Certificaciones (1h 05m)", "Cursos", "🎓", "Cerrar meta de cursos de lunes a viernes."));
-        list.add(new Block(505, Calendar.FRIDAY, "Viernes", "11:35 – 12:00", 11, 35, 12, 0, "Almuerzo temprano & Alistarse", "Comida & Aseo", "🍽️", "Comida en casa y salida a las 12:00."));
+        list.add(new Block(504, Calendar.FRIDAY, "Viernes", "10:30 – 11:40", 10, 30, 11, 40, "Cursos & Certificaciones (1h 10m)", "Cursos", "🎓", "Cerrar meta de cursos de lunes a viernes."));
+        list.add(new Block(505, Calendar.FRIDAY, "Viernes", "11:40 – 12:00", 11, 40, 12, 0, "Almuerzo & Salida puntual 12:00", "Comida & Aseo", "🍽️", "Comida en casa y salida a las 12:00."));
         list.add(new Block(506, Calendar.FRIDAY, "Viernes", "12:00 – 14:00", 12, 0, 14, 0, "Traslado Ida (2h) — Lectura", "Traslado / Lectura", "📖", "Sesión de lectura en el transporte."));
         list.add(new Block(507, Calendar.FRIDAY, "Viernes", "14:00 – 17:30", 14, 0, 17, 30, "Universidad (Inglés & Mate III)", "Universidad", "🏛️", "Cierre de semana académica."));
         list.add(new Block(508, Calendar.FRIDAY, "Viernes", "17:30 – 20:00", 17, 30, 20, 0, "Traslado Vuelta Temprano", "Traslado / Lectura", "🚌", "¡Llegada a casa a las 20:00!"));
@@ -135,7 +135,7 @@ public class RoutineData {
 
         // SÁBADO
         list.add(new Block(601, Calendar.SATURDAY, "Sábado", "08:00 – 08:45", 8, 0, 8, 45, "Despertar, Descompresión & Desayuno Gourmet", "Comida & Aseo", "🍳", "Café de calidad, huevos con aguacate."));
-        list.add(new Block(602, Calendar.SATURDAY, "Sábado", "08:45 – 14:15", 8, 45, 14, 15, "Trabajo Remoto (5.5h con descanso activo)", "Trabajo Remoto", "💼", "Cerrar trabajo remoto semanal para dejar el domingo libre (o 2h extra si faltó en la semana)."));
+        list.add(new Block(602, Calendar.SATURDAY, "Sábado", "08:45 – 14:15", 8, 45, 14, 15, "Trabajo Remoto (Cierre semanal)", "Trabajo Remoto", "💼", "Cerrar trabajo remoto semanal para dejar el domingo libre."));
         list.add(new Block(603, Calendar.SATURDAY, "Sábado", "14:15 – 15:15", 14, 15, 15, 15, "Comida reconfortante & Sobremesa", "Comida & Aseo", "🍽️", "Comida relajada sin prisas."));
         list.add(new Block(604, Calendar.SATURDAY, "Sábado", "15:15 – 16:45", 15, 15, 16, 45, "Cursos & Certificaciones (Sesión Práctica 1.5h)", "Cursos", "🎓", "Avance profundo de fin de semana en tus cursos."));
         list.add(new Block(605, Calendar.SATURDAY, "Sábado", "16:45 – 18:45", 16, 45, 18, 45, "Proyectos Personales (2h)", "Proyectos", "💻", "Construcción de tus aplicaciones o portafolio."));
