@@ -3,3 +3,7 @@ android-app/build/
 android-app/app/build/
 android-app/.gradle/
 android-app/local.properties
+.vercel/
+.env.local
+*.idsig
+

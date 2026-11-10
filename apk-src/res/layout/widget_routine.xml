@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="⚡ RUTINA MAESTRA • LUNES"
-            android:textColor="#818CF8"
+            android:textColor="#D4B87A"
             android:textSize="11sp"
             android:textStyle="bold" />
 
@@ -29,12 +29,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/widget_card_next"
-            android:paddingLeft="8dp"
+            android:paddingLeft="9dp"
             android:paddingTop="3dp"
-            android:paddingRight="8dp"
+            android:paddingRight="9dp"
             android:paddingBottom="3dp"
             android:text="🔄 Sincronizar"
-            android:textColor="#E2E8F0"
+            android:textColor="#FAF8F5"
             android:textSize="10sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="AHORA MISMO"
-                android:textColor="#34D399"
+                android:textColor="#B89758"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -69,8 +69,8 @@
                 android:id="@+id/widget_current_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="07:00 – 07:45"
-                android:textColor="#C7D2FE"
+                android:text="07:00 – 07:50"
+                android:textColor="#D4B87A"
                 android:textSize="11sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -83,7 +83,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="🏋️ Entrenamiento V-Taper"
-            android:textColor="#FFFFFF"
+            android:textColor="#FAF8F5"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -95,7 +95,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:text="Flexiones declinadas, dominadas/remos invertidos, flexiones con déficit."
-            android:textColor="#CBD5E1"
+            android:textColor="#B0ABA0"
             android:textSize="11sp" />
 
         <ProgressBar
@@ -106,7 +106,7 @@
             android:layout_marginTop="6dp"
             android:max="100"
             android:progress="45"
-            android:progressTint="#818CF8" />
+            android:progressTint="#B89758" />
     </LinearLayout>
 
     <!-- Next Upcoming Block -->
@@ -131,7 +131,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="➡️ Siguiente: 🚿 Ducha &amp; Desayuno"
-            android:textColor="#E2E8F0"
+            android:textColor="#FAF8F5"
             android:textSize="11sp"
             android:textStyle="bold" />
 
@@ -140,8 +140,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
-            android:text="07:45 – 08:30"
-            android:textColor="#94A3B8"
+            android:text="07:50 – 08:20"
+            android:textColor="#D4B87A"
             android:textSize="10sp"
             android:textStyle="bold" />
     </LinearLayout>

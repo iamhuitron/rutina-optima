@@ -84,7 +84,7 @@ public class RoutineNotificationHelper {
                 .setSubText(badge)
                 .setContentText(description)
                 .setStyle(new Notification.BigTextStyle().bigText(fullText))
-                .setColor(0xFF6366F1)
+                .setColor(0xFFB89758)
                 .setAutoCancel(true)
                 .setContentIntent(pendingOpen);
 

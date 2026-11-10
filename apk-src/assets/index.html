@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Sistema de Alto Rendimiento | Galaxy S23 Edition</title>
+  <title>Sistema de Alto Rendimiento | Ian Miguel Delgado Huitrón</title>
+  
+  <!-- Favicons and App Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#0D0C0A">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -12,10 +21,24 @@
         extend: {
           colors: {
             brand: {
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
+              void: '#0D0C0A',
+              surface: '#141210',
+              elevated: '#1D1A16',
+              border: '#262420',
+              gold: '#B89758',
+              champagne: '#D4B87A',
+              burgundy: '#611624',
+              spruce: '#1B3B2B',
+              taupe: '#9E8E7A',
+              ivory: '#FAF8F5',
+              body: '#B0ABA0',
+              muted: '#736E66',
             }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
           }
         }
       }
@@ -23,131 +46,143 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #020617;
-      color: #f8fafc;
-      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0D0C0A;
+      color: #FAF8F5;
       -webkit-tap-highlight-color: transparent;
+      background-image: linear-gradient(to right, rgba(38, 36, 32, 0.25) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(38, 36, 32, 0.25) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .font-editorial {
+      font-family: 'Playfair Display', Georgia, serif;
+      letter-spacing: -0.02em;
+    }
+    .font-code {
+      font-family: 'JetBrains Mono', monospace;
     }
     ::-webkit-scrollbar { width: 4px; height: 4px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb { background: #262420; border-radius: 9999px; }
     .glass-nav {
-      background: rgba(15, 23, 42, 0.92);
+      background: rgba(20, 18, 16, 0.94);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
     }
-    .hero-gradient {
-      background: linear-gradient(145deg, rgba(30, 27, 75, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+    .hero-editorial {
+      background: linear-gradient(145deg, #1D1A16 0%, #141210 100%);
     }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen pb-28 md:pb-12 antialiased selection:bg-indigo-500 selection:text-white">
+<body class="bg-brand-void text-brand-ivory min-h-screen pb-28 md:pb-12 antialiased selection:bg-brand-gold selection:text-brand-void">
 
-  <!-- Header Superior -->
-  <header class="border-b border-slate-800 bg-slate-900/80 sticky top-0 z-30 backdrop-blur-md">
+  <!-- Header Superior Editorial -->
+  <header class="border-b border-brand-border bg-brand-surface/90 sticky top-0 z-30 backdrop-blur-md">
     <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
-      <div class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/20 text-sm">
-          ⚡
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-brand-elevated border border-brand-gold/60 flex items-center justify-center font-editorial font-bold text-brand-champagne text-sm tracking-wider shadow-md shrink-0">
+          MH
         </div>
         <div>
-          <h1 class="text-sm md:text-base font-bold leading-tight flex items-center gap-1.5">
-            Rutina Maestra <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 font-semibold">v1.1 • Cursos & Anti-9AM</span>
+          <h1 class="text-sm md:text-base font-editorial font-bold leading-tight flex items-center gap-2 text-brand-ivory">
+            Rutina Maestra <span class="font-code text-[10px] px-2 py-0.5 rounded bg-brand-elevated text-brand-champagne border border-brand-gold/40 font-medium">v1.2 • Salida 12:00</span>
           </h1>
-          <p class="text-[11px] text-slate-400 hidden sm:block">Despertar 07:00 sin recaída • Cursos Diarios • 20h Remoto • Físico V-Taper</p>
+          <p class="text-[11px] text-brand-muted hidden sm:block">07:00 Anti-Inercia • Cursos Diarios • 20h Remoto • V-Taper • Domingo Libre</p>
         </div>
       </div>
+      
       <div class="flex items-center gap-2">
-        <a id="apk-download-btn" href="/RutinaOptima-S23.apk" download="RutinaOptima-S23.apk" class="text-xs px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-md shadow-indigo-600/25 flex items-center gap-1.5 transition-all">
-          <span>📥</span> <span>Descargar APK (S23)</span>
+        <a id="apk-download-btn" href="/RutinaOptima-S23.apk" download="RutinaOptima-S23.apk" class="text-xs px-3 py-1.5 rounded-lg bg-brand-gold hover:bg-brand-champagne text-brand-void font-bold shadow-md shadow-brand-gold/20 flex items-center gap-1.5 transition-all">
+          <span>📥</span> <span>APK S23</span>
         </a>
-        <button onclick="handleToggleAlarms()" id="alarm-status-pill" class="text-xs px-2.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-bold flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" id="alarm-dot"></span>
+        <button onclick="handlePinWidget()" id="widget-pin-btn" class="hidden text-xs px-2.5 py-1.5 rounded-lg bg-brand-elevated hover:bg-brand-surface text-brand-champagne border border-brand-gold/40 font-bold flex items-center gap-1.5 transition-all">
+          <span>🧩</span> <span class="hidden sm:inline">Widget</span>
+        </button>
+        <button onclick="handleToggleAlarms()" id="alarm-status-pill" class="text-xs px-2.5 py-1.5 rounded-lg bg-brand-spruce/60 text-brand-champagne border border-brand-gold/30 font-medium flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" id="alarm-dot"></span>
           <span id="alarm-label">🔔 Alarmas ON</span>
         </button>
       </div>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 mt-4 space-y-5">
+  <!-- Pestañas de Navegación Principal -->
+  <nav class="max-w-5xl mx-auto px-4 mt-4">
+    <div class="flex items-center gap-2 overflow-x-auto pb-2 border-b border-brand-border text-xs sm:text-sm no-scrollbar">
+      <button onclick="switchTab('horario')" id="tab-btn-horario" class="tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-gold text-brand-void border border-brand-gold shadow-sm">
+        📅 Horario Semanal
+      </button>
+      <button onclick="switchTab('rules')" id="tab-btn-rules" class="tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-surface text-brand-body hover:text-brand-ivory border border-brand-border">
+        ⏰ Anti-9AM & Cursos
+      </button>
+      <button onclick="switchTab('hgh')" id="tab-btn-hgh" class="tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-surface text-brand-body hover:text-brand-ivory border border-brand-border">
+        🧬 HGH & Estatura
+      </button>
+      <button onclick="switchTab('fitness')" id="tab-btn-fitness" class="tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-surface text-brand-body hover:text-brand-ivory border border-brand-border">
+        🏋️ Físico V-Taper
+      </button>
+      <button onclick="switchTab('nutrition')" id="tab-btn-nutrition" class="tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-surface text-brand-body hover:text-brand-ivory border border-brand-border">
+        🥗 Nutrición & Aseo
+      </button>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 mt-5 space-y-6">
 
     <!-- ================================================= -->
     <!-- TARJETA EN VIVO: AHORA MISMO + MODO RESCATE 9 AM  -->
     <!-- ================================================= -->
-    <section class="hero-gradient border border-indigo-500/40 rounded-2xl p-4 sm:p-5 shadow-xl space-y-3.5">
+    <section class="hero-editorial border border-brand-gold/40 rounded-2xl p-4 sm:p-5 shadow-2xl space-y-3.5">
       <div class="flex items-center justify-between flex-wrap gap-2">
         <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-          <span id="live-day-badge" class="text-[11px] font-extrabold tracking-wider text-emerald-400 uppercase">AHORA MISMO • CARGANDO...</span>
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-gold animate-ping"></span>
+          <span id="live-day-badge" class="font-code text-[11px] font-bold tracking-wider text-brand-champagne uppercase">AHORA MISMO • CARGANDO...</span>
         </div>
         <div class="flex items-center gap-2">
-          <button onclick="toggleRescueMode()" id="rescue-mode-btn" class="text-[11px] px-2.5 py-1 rounded-lg bg-rose-500/15 hover:bg-rose-500/25 text-rose-300 border border-rose-500/30 font-bold transition-all">
+          <button onclick="toggleRescueMode()" id="rescue-mode-btn" class="font-code text-[11px] px-2.5 py-1 rounded-lg bg-brand-burgundy/30 hover:bg-brand-burgundy/50 text-brand-champagne border border-brand-burgundy font-medium transition-all">
             🚨 ¿Despertaste 9 AM? Modo Rescate: OFF
           </button>
-          <span id="live-time-range" class="font-mono text-xs font-bold text-indigo-300 bg-slate-950/70 px-2.5 py-1 rounded-lg border border-indigo-500/30">--:--</span>
+          <span id="live-time-range" class="font-code text-xs font-bold text-brand-champagne bg-brand-void px-2.5 py-1 rounded-lg border border-brand-gold/30">--:--</span>
         </div>
       </div>
 
       <div class="flex items-start gap-3">
         <div id="live-icon" class="text-2xl sm:text-3xl shrink-0 mt-0.5">⚡</div>
         <div class="flex-1 min-w-0">
-          <h2 id="live-title" class="text-base sm:text-lg font-extrabold text-white leading-snug">Calculando bloque activo...</h2>
-          <p id="live-desc" class="text-xs text-slate-300 mt-1 leading-relaxed">Sincronizando con el reloj de tu Galaxy S23.</p>
+          <h2 id="live-title" class="text-base sm:text-lg font-editorial font-bold text-brand-ivory leading-snug">Calculando bloque activo...</h2>
+          <p id="live-desc" class="text-xs text-brand-body mt-1 leading-relaxed">Sincronizando con el reloj de tu Galaxy S23.</p>
         </div>
       </div>
 
-      <div class="space-y-1">
-        <div class="flex justify-between text-[11px] font-semibold">
-          <span id="live-progress-text" class="text-slate-400">Progreso del bloque: 0%</span>
-          <span id="live-remaining-text" class="text-indigo-300">Restan -- min</span>
+      <!-- Barra de progreso -->
+      <div class="space-y-1.5 pt-1">
+        <div class="flex items-center justify-between font-code text-[11px] text-brand-muted">
+          <span id="live-progress-text">Progreso del bloque: 0%</span>
+          <span id="live-remaining-text" class="text-brand-champagne font-semibold">Restan -- min</span>
         </div>
-        <div class="w-full h-2 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
-          <div id="live-progress-bar" class="h-full bg-gradient-to-r from-indigo-500 to-emerald-400 transition-all duration-500" style="width: 45%"></div>
+        <div class="w-full h-2 bg-brand-void rounded-full overflow-hidden border border-brand-border">
+          <div id="live-progress-bar" class="h-full bg-gradient-to-r from-brand-gold to-brand-champagne transition-all duration-500 rounded-full" style="width: 0%"></div>
         </div>
       </div>
 
-      <div class="bg-slate-950/75 border border-slate-800 rounded-xl px-3 py-2 flex items-center justify-between gap-2 text-xs">
-        <span id="live-next-title" class="font-semibold text-slate-200 truncate">➡️ Siguiente: ...</span>
-        <span id="live-next-time" class="font-mono text-[11px] text-slate-400 shrink-0">--:--</span>
-      </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
-        <button onclick="handleTestNotification()" class="px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-indigo-600/20 transition-all">
-          <span>📲</span> <span>Probar Notificación</span>
-        </button>
-        <button onclick="handlePinWidget()" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 active:scale-[0.98] text-slate-100 border border-slate-700 text-xs font-bold flex items-center justify-center gap-1.5 transition-all">
-          <span>🧩</span> <span>Fijar Widget S23</span>
-        </button>
-        <button onclick="switchTab('rules')" class="col-span-2 sm:col-span-1 px-3 py-2 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 text-xs font-bold flex items-center justify-center gap-1.5 transition-all">
-          <span>⏰</span> <span>Protocolo Anti-9AM</span>
-        </button>
+      <!-- Previa del siguiente bloque -->
+      <div class="pt-2 border-t border-brand-border flex items-center justify-between text-xs text-brand-body flex-wrap gap-2">
+        <span id="live-next-title" class="font-medium text-brand-champagne flex items-center gap-1.5">
+          ➡️ Siguiente: Cargando...
+        </span>
+        <div class="flex items-center gap-2">
+          <span id="live-next-time" class="font-code text-[11px] text-brand-muted font-bold">--:--</span>
+          <button onclick="handleTestNotification()" class="text-[11px] px-2.5 py-1 rounded-lg bg-brand-surface hover:bg-brand-elevated text-brand-champagne border border-brand-border transition-all">
+            📲 Probar Notificación
+          </button>
+        </div>
       </div>
     </section>
-
-    <!-- Pestañas de Navegación Principal (Desktop) -->
-    <nav class="hidden md:block">
-      <div class="flex items-center gap-2 overflow-x-auto pb-2 border-b border-slate-800 text-xs sm:text-sm">
-        <button onclick="switchTab('horario')" id="tab-btn-horario" class="tab-button px-4 py-2 rounded-xl font-semibold transition-all shrink-0 bg-indigo-600 text-white shadow-md shadow-indigo-600/20">
-          📅 Horario Semanal
-        </button>
-        <button onclick="switchTab('rules')" id="tab-btn-rules" class="tab-button px-4 py-2 rounded-xl font-semibold transition-all shrink-0 bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800">
-          ⏰ Anti-Quedarse Dormido & Cursos
-        </button>
-        <button onclick="switchTab('hgh')" id="tab-btn-hgh" class="tab-button px-4 py-2 rounded-xl font-semibold transition-all shrink-0 bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800">
-          🧬 HGH & Estatura
-        </button>
-        <button onclick="switchTab('fitness')" id="tab-btn-fitness" class="tab-button px-4 py-2 rounded-xl font-semibold transition-all shrink-0 bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800">
-          🏋️ Físico V-Taper (Casa)
-        </button>
-        <button onclick="switchTab('nutrition')" id="tab-btn-nutrition" class="tab-button px-4 py-2 rounded-xl font-semibold transition-all shrink-0 bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800">
-          🥗 Nutrición & Aseo
-        </button>
-      </div>
-    </nav>
 
     <!-- ========================================== -->
     <!-- TAB 1: HORARIO INTERACTIVO SEMANAL        -->
@@ -156,40 +191,44 @@
       
       <!-- Resumen Métricas -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3.5">
-          <p class="text-[11px] text-slate-400 font-medium">🎓 Cursos Diarios</p>
-          <p class="text-base sm:text-lg font-bold text-sky-400 mt-0.5">8.5h+ / sem</p>
-          <p class="text-[10px] text-emerald-400 font-semibold">PC Mañana + Videos Ida</p>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-3.5">
+          <p class="text-[11px] text-brand-muted font-medium">💤 Sueño Anabólico</p>
+          <p class="font-code text-base sm:text-lg font-bold text-brand-champagne mt-0.5">7.5h – 8.5h</p>
+          <p class="text-[10px] text-brand-gold">Pico Somatropina (HGH)</p>
         </div>
-        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3.5">
-          <p class="text-[11px] text-slate-400 font-medium">💤 5 Ciclos de 90m</p>
-          <p class="text-base sm:text-lg font-bold text-indigo-400 mt-0.5">23:15 – 07:00</p>
-          <p class="text-[10px] text-emerald-400">Sin Inercia de Sueño</p>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-3.5">
+          <p class="text-[11px] text-brand-muted font-medium">💼 Trabajo Remoto</p>
+          <p class="font-code text-base sm:text-lg font-bold text-brand-gold mt-0.5">20h / semana</p>
+          <p class="text-[10px] text-brand-champagne font-semibold">Domingo 100% LIBRE</p>
         </div>
-        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3.5">
-          <p class="text-[11px] text-slate-400 font-medium">💼 Trabajo Remoto</p>
-          <p class="text-base sm:text-lg font-bold text-amber-400 mt-0.5">20h / semana</p>
-          <p class="text-[10px] text-emerald-400 font-semibold">Domingo 100% LIBRE</p>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-3.5">
+          <p class="text-[11px] text-brand-muted font-medium">🎓 Cursos Diarios</p>
+          <p class="font-code text-base sm:text-lg font-bold text-brand-champagne mt-0.5">12.5h / sem</p>
+          <p class="text-[10px] text-brand-gold font-semibold">PC Casa + Transporte</p>
         </div>
-        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3.5">
-          <p class="text-[11px] text-slate-400 font-medium">🏋️ Físico V-Taper</p>
-          <p class="text-base sm:text-lg font-bold text-rose-400 mt-0.5">35 min / día</p>
-          <p class="text-[10px] text-slate-400">Alta Densidad en Casa</p>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-3.5">
+          <p class="text-[11px] text-brand-muted font-medium">🏋️ Físico V-Taper</p>
+          <p class="font-code text-base sm:text-lg font-bold text-brand-ivory mt-0.5">35 min / día</p>
+          <p class="text-[10px] text-brand-body">Hipertrofia en Casa</p>
         </div>
       </div>
 
       <!-- Selector de Días y Filtros -->
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 sm:p-4 space-y-3">
-        <div class="flex items-center justify-between gap-2 overflow-x-auto pb-1" id="day-buttons"></div>
+      <div class="bg-brand-surface border border-brand-border rounded-xl p-3.5 sm:p-4 space-y-3">
+        <!-- Días -->
+        <div class="flex items-center justify-between gap-2 overflow-x-auto pb-1 no-scrollbar" id="day-buttons">
+          <!-- Renderizado por JS -->
+        </div>
 
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2 border-t border-slate-800/80">
-          <div class="text-xs text-slate-400 font-medium">Filtro de actividad:</div>
-          <select id="category-filter" class="bg-slate-950 border border-slate-700 text-xs rounded-xl px-3 py-1.5 text-slate-200 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+        <!-- Filtros de categoría -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2 border-t border-brand-border">
+          <div class="text-xs text-brand-muted font-medium">Filtro de actividad:</div>
+          <select id="category-filter" class="bg-brand-void border border-brand-border text-xs rounded-lg px-3 py-1.5 text-brand-ivory focus:outline-none focus:ring-1 focus:ring-brand-gold">
             <option value="all">Todas las actividades</option>
             <option value="courses">🎓 Cursos & Certificaciones</option>
             <option value="hgh">💤 Sueño & HGH</option>
             <option value="fitness">🏋️ Ejercicio & Físico</option>
-            <option value="care">🚿 Comidas, Ducha & Aseo</option>
+            <option value="care">🍽️ Comidas, Ducha & Aseo</option>
             <option value="work">💼 Trabajo Remoto</option>
             <option value="projects">🚀 Proyectos Personales</option>
             <option value="uni">🏛️ Universidad</option>
@@ -200,166 +239,264 @@
       </div>
 
       <!-- Timeline -->
-      <div id="timeline-container" class="space-y-2.5"></div>
+      <div id="timeline-container" class="space-y-2.5">
+        <!-- Inyectado por JS -->
+      </div>
     </div>
 
     <!-- ========================================== -->
-    <!-- TAB 5: PROTOCOLO ANTI-9AM & CURSOS        -->
+    <!-- TAB 2: PROTOCOLO ANTI-9AM & CURSOS        -->
     <!-- ========================================== -->
     <div id="tab-content-rules" class="tab-pane hidden space-y-5">
-      <div class="bg-gradient-to-r from-amber-950/70 to-slate-900 border border-amber-500/30 rounded-2xl p-5">
-        <h2 class="text-lg font-bold text-amber-300 flex items-center gap-2">
-          <span>⏰ Por qué te vuelves a dormir de 7 AM a 9 AM (Y cómo eliminarlo al 100%)</span>
+      
+      <div class="bg-brand-surface border border-brand-gold/40 rounded-xl p-5">
+        <h2 class="text-lg font-editorial font-bold text-brand-champagne flex items-center gap-2">
+          <span>⏰ Protocolo Anti-Inercia (07:00 AM) & Bloques Diarios de Cursos</span>
         </h2>
-        <p class="text-xs md:text-sm text-slate-300 mt-1 leading-relaxed">
-          Volver a quedarte dormido a las 7:00 AM y despertar hasta las 9:00 AM ocurre por dos causas fisiológicas: <strong>inercia del sueño</strong> (cortar el ciclo #5 de sueño REM/profundo a la mitad) y <strong>apagar la alarma sin salir de la cama</strong>. Aquí está el protocolo exacto para erradicarlo desde mañana.
+        <p class="text-xs md:text-sm text-brand-body mt-1.5 leading-relaxed">
+          El cansancio a las 07:00 AM es <strong>inercia del sueño</strong> por cortar un ciclo biológico a la mitad o apagar la alarma acostado. Con este protocolo despiertas con dopamina y garantizas más de 12 horas semanales de avance en tus cursos.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-        <div class="bg-slate-900 border border-amber-500/30 rounded-2xl p-5 space-y-2.5">
-          <div class="flex items-center gap-2 text-amber-400 font-bold text-sm">
-            <span>1️⃣</span> El Galaxy S23 a 3 Metros + Vaso de Agua con Sal
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-2.5">
+          <div class="flex items-center gap-2 text-brand-champagne font-bold text-sm">
+            <span>1️⃣</span> El S23 a 3 metros + Vaso con Sal
           </div>
-          <p class="text-slate-300 leading-relaxed">
-            <strong>Regla inquebrantable:</strong> A las 23:10 deja tu S23 cargando sobre tu escritorio o junto a la barra de dominadas (a mínimo 3 metros de tu cama) con un vaso de agua con una pizca de sal al lado. Si apagas la alarma acostado, tu corteza prefrontal sigue apagada y te volverás a dormir el 95% de las veces.
+          <p class="text-brand-body leading-relaxed">
+            A las 23:10 deja tu Galaxy S23 cargando lejos de la cama con un vaso de agua y una pizca de sal marina. A las 07:00 AM la corteza prefrontal está adormilada: <strong>pararte físicamente a apagar la alarma</strong> activa el flujo sanguíneo cerebral e impide que vuelvas a dormirte.
           </p>
         </div>
 
-        <div class="bg-slate-900 border border-indigo-500/30 rounded-2xl p-5 space-y-2.5">
-          <div class="flex items-center gap-2 text-indigo-400 font-bold text-sm">
-            <span>2️⃣</span> Sincronización de 5 Ciclos de 90 Minutos (23:30 → 07:00)
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-2.5">
+          <div class="flex items-center gap-2 text-brand-champagne font-bold text-sm">
+            <span>2️⃣</span> La Regla de los 90 Segundos
           </div>
-          <p class="text-slate-300 leading-relaxed">
-            Como llegas de la universidad a las 22:30, tu sueño real empieza a las <strong>23:30</strong>. Cada ciclo de sueño dura <strong>90 minutos</strong>: 5 ciclos completos son exactamente <strong>7.5 horas (despertar a las 07:00 AM)</strong>. Despertar a las 07:00 en vez de 06:30 evita cortar tu último ciclo profundo.
+          <p class="text-brand-body leading-relaxed">
+            • <strong>Segundo 1–30:</strong> Bebe el agua y abre la cortina (luz natural en la retina frena en seco la melatonina).<br>
+            • <strong>Segundo 30–90:</strong> Cuélgate 60 segundos de la barra (<em>Dead Hang</em>) y lávate la cara con agua fría. <strong>¡Queda prohibido volver a la cama!</strong>
           </p>
         </div>
 
-        <div class="bg-slate-900 border border-emerald-500/30 rounded-2xl p-5 space-y-2.5">
-          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
-            <span>3️⃣</span> Regla de los 90 Segundos: Luz + Dead Hang + Agua Fría
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-2.5">
+          <div class="flex items-center gap-2 text-brand-gold font-bold text-sm">
+            <span>3️⃣</span> Ducha Fresca Matutina (07:50 AM)
           </div>
-          <p class="text-slate-300 leading-relaxed">
-            En cuanto te pares a apagar el S23 a las 07:00:<br>
-            • <strong>Segundo 1–30:</strong> Bebe el vaso de agua y abre la cortina de par en par (la luz en la retina frena la melatonina).<br>
-            • <strong>Segundo 30–90:</strong> Cuélgate 60 segundos de la barra (<em>Dead Hang</em>) y lávate la cara con agua fría. ¡Prohibido volver a sentarte en la cama!
+          <p class="text-brand-body leading-relaxed">
+            Termina tu ducha con 60 segundos de agua fresca. Esto provoca un pico de <strong>noradrenalina y dopamina de hasta +250%</strong> que dura más de 3 horas, eliminando por completo cualquier sensación de somnolencia residual.
           </p>
         </div>
 
-        <div class="bg-slate-900 border border-sky-500/30 rounded-2xl p-5 space-y-2.5">
-          <div class="flex items-center gap-2 text-sky-400 font-bold text-sm">
-            <span>4️⃣</span> Estrategia Doble para tus Cursos Diarios (8.5h+ / semana)
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-2.5">
+          <div class="flex items-center gap-2 text-brand-champagne font-bold text-sm">
+            <span>4️⃣</span> Estrategia de Cursos Diarios (12.5h / semana)
           </div>
-          <p class="text-slate-300 leading-relaxed">
-            • <strong>Bloque Práctico en PC (Todos los días):</strong> De <strong>10:50 a 11:40</strong> (Lun a Jue) y de <strong>10:30 a 11:40</strong> (Vie) antes de tu salida fija de las 12:00, más Sábado (1.5h) y Domingo (1h 15m).<br>
-            • <strong>Hora de Oro en Biblioteca Uni (Mar y Jue 14:00–15:00):</strong> Como sales de casa a las 12:00 todos los días y llegas a las 14:00, el martes y jueves tienes 1 hora libre en el campus antes de tu clase de las 15:00 para avanzar en tus cursos o proyectos personales.<br>
-            • <strong>Bloque Teórico en Transporte de Ida (12:00–14:00):</strong> Descarga los videos de tus cursos en el S23 y ve 45 min en el trayecto de ida.
+          <p class="text-brand-body leading-relaxed">
+            • <strong>En PC (Casa):</strong> De <strong>10:50 a 11:40</strong> (Lun a Jue) y <strong>10:30 a 11:40</strong> (Vie) antes de tu salida fija a las 12:00, más Sábados (1.5h) y Domingos (1h 15m).<br>
+            • <strong>Hora de Oro en Biblioteca Uni (Mar y Jue 14:00–15:00):</strong> Al salir a las 12:00 llegas a las 14:00 al campus; tienes 1 hora libre en la biblioteca antes de tu clase de las 15:00.<br>
+            • <strong>En Transporte de Ida (12:00–12:45):</strong> 45 min viendo videos de cursos descargados en tu S23.
           </p>
         </div>
       </div>
 
-      <div class="bg-slate-900 border border-rose-500/30 rounded-2xl p-5 space-y-2 text-xs">
-        <div class="flex items-center gap-2 text-rose-400 font-bold text-sm">
+      <div class="bg-brand-surface border border-brand-burgundy rounded-xl p-5 space-y-2 text-xs">
+        <div class="flex items-center gap-2 text-brand-champagne font-bold text-sm">
           <span>🚨</span> ¿Qué hacer si un día te levantas a las 09:00 AM? (Modo Rescate)
         </div>
-        <p class="text-slate-300 leading-relaxed">
-          Si algún día te despiertas a las 09:00 AM, <strong>no des el día por perdido</strong>. Toca el botón <strong>"🚨 ¿Despertaste 9 AM? Modo Rescate"</strong> arriba en la app y tu mañana de Lunes a Viernes se reajustará automáticamente para salir puntual a las <strong>12:00 PM</strong>: haces activación V-Taper + ducha rápida (`09:00–09:25`), 1.5h de Trabajo Remoto (`09:25–10:55`), 45 min de tus Cursos (`10:55–11:40`) y almuerzas de `11:40–12:00` antes de salir a la facultad.
+        <p class="text-brand-body leading-relaxed">
+          Si algún día te despiertas a las 09:00 AM, <strong>no des el día por perdido</strong>. Toca el botón <strong>"🚨 ¿Despertaste 9 AM? Modo Rescate"</strong> y tu mañana se compactará automáticamente para salir puntual a las <strong>12:00 PM</strong>: haces activación V-Taper + ducha rápida (`09:00–09:25`), 1.5h de Trabajo Remoto (`09:25–10:55`), 45 min de Cursos (`10:55–11:40`) y almuerzo de `11:40–12:00` antes de salir a la facultad.
         </p>
       </div>
     </div>
 
     <!-- ========================================== -->
-    <!-- TAB 2: PROTOCOLO HGH & ESTATURA           -->
+    <!-- TAB 3: PROTOCOLO HGH & ESTATURA           -->
     <!-- ========================================== -->
     <div id="tab-content-hgh" class="tab-pane hidden space-y-6">
-      <div class="bg-gradient-to-r from-indigo-950/60 to-slate-900 border border-indigo-500/20 rounded-2xl p-5">
-        <h2 class="text-lg font-bold text-indigo-300 flex items-center gap-2">
+      
+      <div class="bg-brand-surface border border-brand-gold/40 rounded-xl p-5">
+        <h2 class="text-lg font-editorial font-bold text-brand-champagne flex items-center gap-2">
           <span>🧬 Bioquímica de la Hormona del Crecimiento (Somatropina)</span>
         </h2>
-        <p class="text-xs md:text-sm text-slate-300 mt-1 leading-relaxed">
-          Entre el 70% y el 80% de la HGH se secreta en pulsos biológicos durante las fases de <strong>sueño profundo de ondas lentas (N3)</strong>.
+        <p class="text-xs md:text-sm text-brand-body mt-1.5 leading-relaxed">
+          Entre el 70% y el 80% de la HGH se secreta en pulsos biológicos durante las fases de <strong class="text-brand-ivory">sueño profundo de ondas lentas (N3)</strong>. Si optimizamos la alimentación previa y la columna vertebral, logramos máxima recuperación física, menor grasa corporal y descomprimir los discos intervertebrales para ganar de 1 a 2 cm de estatura real.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center text-lg font-bold">🚫</div>
-          <h3 class="text-base font-bold text-slate-100">1. Supresión Total de Insulina Nocturna</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">La insulina alta bloquea la secreción de HGH. Cena ligero a las 22:30 (proteína magra + vegetales, cero azúcares o harinas).</p>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-burgundy/40 text-brand-champagne border border-brand-burgundy flex items-center justify-center text-lg font-bold">🚫</div>
+          <h3 class="text-base font-editorial font-bold text-brand-ivory">1. Supresión Total de Insulina Nocturna</h3>
+          <p class="text-xs text-brand-body leading-relaxed">La insulina alta bloquea la secreción de HGH. Cena ligero a las 22:30 (proteína magra + vegetales, cero azúcares o harinas).</p>
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center text-lg font-bold">📏</div>
-          <h3 class="text-base font-bold text-slate-100">2. Descompresión Espinal (+1 a 2 cm Reales)</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">2 series de 60 seg colgado en barra (Dead Hang) al despertar (07:00) y antes de dormir (23:10) para descomprimir discos intervertebrales.</p>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-elevated text-brand-gold border border-brand-gold/40 flex items-center justify-center text-lg font-bold">📏</div>
+          <h3 class="text-base font-editorial font-bold text-brand-ivory">2. Descompresión Espinal (+1 a 2 cm Reales)</h3>
+          <p class="text-xs text-brand-body leading-relaxed">2 series de 60 seg colgado en barra (Dead Hang) al despertar (07:00) y antes de dormir (23:10) para descomprimir discos intervertebrales.</p>
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center justify-center text-lg font-bold">🌑</div>
-          <h3 class="text-base font-bold text-slate-100">3. Higiene de Sueño Profundo (Ondas Lentas)</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Habitación totalmente oscura y fresca (18–20 °C), dejando el S23 a 3 metros de la cama.</p>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-elevated text-brand-champagne border border-brand-border flex items-center justify-center text-lg font-bold">🌑</div>
+          <h3 class="text-base font-editorial font-bold text-brand-ivory">3. Higiene de Sueño Profundo (Ondas Lentas)</h3>
+          <p class="text-xs text-brand-body leading-relaxed">Habitación totalmente oscura y fresca (18–20 °C), dejando el S23 a 3 metros de la cama para evitar luz azul.</p>
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-lg font-bold">💊</div>
-          <h3 class="text-base font-bold text-slate-100">4. Magnesio Glicinato + Zinc</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">300–400 mg de Magnesio Glicinato antes de dormir profundizan la fase N3 y evitan despertar cansado a las 07:00 AM.</p>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-spruce/40 text-emerald-400 border border-brand-spruce flex items-center justify-center text-lg font-bold">💊</div>
+          <h3 class="text-base font-editorial font-bold text-brand-ivory">4. Magnesio Glicinato + Zinc</h3>
+          <p class="text-xs text-brand-body leading-relaxed">300–400 mg de Magnesio Glicinato antes de dormir profundizan la fase N3 y evitan despertar con fatiga matutina.</p>
         </div>
       </div>
     </div>
 
     <!-- ========================================== -->
-    <!-- TAB 3: RUTINA V-TAPER (CASA)              -->
+    <!-- TAB 4: RUTINA V-TAPER (CASA)              -->
     <!-- ========================================== -->
     <div id="tab-content-fitness" class="tab-pane hidden space-y-5">
-      <div class="bg-gradient-to-r from-rose-950/60 to-slate-900 border border-rose-500/20 rounded-2xl p-5">
-        <h2 class="text-lg font-bold text-rose-300 flex items-center gap-2">
+      <div class="bg-brand-surface border border-brand-gold/40 rounded-xl p-5">
+        <h2 class="text-lg font-editorial font-bold text-brand-champagne flex items-center gap-2">
           <span>🏋️ Físico Estético V-Taper Condensado (35 min / 07:15 – 07:50)</span>
         </h2>
-        <p class="text-xs md:text-sm text-slate-300 mt-1 leading-relaxed">
+        <p class="text-xs md:text-sm text-brand-body mt-1.5 leading-relaxed">
           Superseries de alta densidad con 60 seg de descanso para lograr máximo estímulo estético en 35 minutos y dejar tiempo libre para tus cursos diarios.
         </p>
       </div>
 
       <div class="space-y-4 text-xs">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="font-bold text-rose-400 uppercase">Lunes • Espalda en V & Pecho Superior</span>
-          <p class="text-slate-300 mt-1">1. Dominadas / Remos Invertidos (4x fallo) • 2. Flexiones Declinadas (4x15) • 3. Flexiones con Déficit (3x12) • 4. Dead Hang (2x60s).</p>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-4 md:p-5">
+          <div class="flex items-center justify-between pb-3 border-b border-brand-border">
+            <div>
+              <span class="font-code text-xs font-bold text-brand-champagne uppercase tracking-wider">Lunes • 07:15 – 07:50</span>
+              <h3 class="text-base font-editorial font-bold text-brand-ivory mt-0.5">Espalda en V (Anchura Dorsal) & Pecho Superior</h3>
+            </div>
+            <span class="font-code text-xs px-2.5 py-1 rounded bg-brand-burgundy/40 text-brand-ivory border border-brand-burgundy font-semibold">Día 1</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3.5 text-xs">
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">1. Dominadas / Remos Invertidos en Mesa</p>
+              <p class="text-brand-body mt-1">4 series al fallo técnico (RPE 8-9). Enfócate en tirar con los codos para ensanchar dorsales.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">2. Flexiones Declinadas (Pies en Silla)</p>
+              <p class="text-brand-body mt-1">4 series de 12–15 reps. Aísla y llena la clavícula y haz superior del pectoral.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">3. Flexiones con Déficit (Manos sobre Libros)</p>
+              <p class="text-brand-body mt-1">3 series de 10–12 reps. Máximo estiramiento de fibras en la parte baja.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">4. Dead Hang Activo</p>
+              <p class="text-brand-body mt-1">2 series de 60 segundos colgado con retracción escapular.</p>
+            </div>
+          </div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="font-bold text-amber-400 uppercase">Martes • Hombros 3D & Brazos</span>
-          <p class="text-slate-300 mt-1">1. Pike Push-ups (4x10) • 2. Elevaciones Laterales Estrictas (4x20) • 3. Fondos en Silla (3x15) • 4. Stomach Vacuum (4x20s).</p>
+
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-4 md:p-5">
+          <div class="flex items-center justify-between pb-3 border-b border-brand-border">
+            <div>
+              <span class="font-code text-xs font-bold text-brand-champagne uppercase tracking-wider">Martes • 07:15 – 07:50</span>
+              <h3 class="text-base font-editorial font-bold text-brand-ivory mt-0.5">Hombros 3D (Anchura Clavicular) & Brazos</h3>
+            </div>
+            <span class="font-code text-xs px-2.5 py-1 rounded bg-brand-elevated text-brand-champagne border border-brand-gold/40 font-semibold">Día 2</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3.5 text-xs">
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">1. Pike Push-ups (Flexiones en V)</p>
+              <p class="text-brand-body mt-1">4 series de 8–10 reps. Fuerza vertical y deltoides anterior/medio.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">2. Elevaciones Laterales Estrictas</p>
+              <p class="text-brand-body mt-1">4 series de 15–20 reps. El ejercicio #1 para parecer ancho de frente.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">3. Fondos en Sillas / Dips</p>
+              <p class="text-brand-body mt-1">3 series de 12–15 reps. Densidad en la cabeza larga del tríceps.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">4. Stomach Vacuum (Cintura Estrecha)</p>
+              <p class="text-brand-body mt-1">4 series de 20 segundos de contracción en ayunas.</p>
+            </div>
+          </div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="font-bold text-emerald-400 uppercase">Miércoles • Pierna Atlética & Pliometría</span>
-          <p class="text-slate-300 mt-1">1. Sentadilla Búlgara (4x12) • 2. Pantorrilla Unilateral en Escalón (4x20) • 3. Puente Glúteo 1 Pierna (3x15) • 4. Saltos Explosivos (3x8).</p>
+
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-4 md:p-5">
+          <div class="flex items-center justify-between pb-3 border-b border-brand-border">
+            <div>
+              <span class="font-code text-xs font-bold text-brand-gold uppercase tracking-wider">Miércoles • 07:15 – 07:50</span>
+              <h3 class="text-base font-editorial font-bold text-brand-ivory mt-0.5">Pierna Atlética & Pliometría Estética</h3>
+            </div>
+            <span class="font-code text-xs px-2.5 py-1 rounded bg-brand-spruce/60 text-brand-champagne border border-brand-spruce font-semibold">Día 3</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3.5 text-xs">
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">1. Sentadilla Búlgara</p>
+              <p class="text-brand-body mt-1">4 series de 10–12 reps por pierna. Glúteo y cuádriceps sin comprimir la columna.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">2. Pantorrilla Unilateral en Escalón</p>
+              <p class="text-brand-body mt-1">4 series de 20 reps con pausa isométrica arriba de 2 segundos.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">3. Puente de Glúteo a 1 Pierna</p>
+              <p class="text-brand-body mt-1">3 series de 12–15 reps. Cadena posterior y protección lumbar.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">4. Saltos Explosivos al Pecho</p>
+              <p class="text-brand-body mt-1">3 series de 8 reps con aterrizaje suave para reclutamiento rápido.</p>
+            </div>
+          </div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="font-bold text-indigo-400 uppercase">Jueves • Densidad de Torso & Postura</span>
-          <p class="text-slate-300 mt-1">1. Remo Unilateral Pesado (4x12) • 2. Flexiones Diamante (3x fallo) • 3. Vuelos Posteriores / Pájaros (4x15) • 4. Plancha Hollow (3x45s).</p>
+
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-4 md:p-5">
+          <div class="flex items-center justify-between pb-3 border-b border-brand-border">
+            <div>
+              <span class="font-code text-xs font-bold text-brand-champagne uppercase tracking-wider">Jueves • 07:15 – 07:50</span>
+              <h3 class="text-base font-editorial font-bold text-brand-ivory mt-0.5">Densidad de Torso & Postura de Expansión</h3>
+            </div>
+            <span class="font-code text-xs px-2.5 py-1 rounded bg-brand-elevated text-brand-champagne border border-brand-gold/40 font-semibold">Día 4</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3.5 text-xs">
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">1. Remos Unilaterales Pesados</p>
+              <p class="text-brand-body mt-1">4 series de 10–12 reps con mochila cargada de libros.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">2. Flexiones Diamante / Manos Juntas</p>
+              <p class="text-brand-body mt-1">3 series al fallo técnico. Tríceps y centro del pecho.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">3. Vuelos Posteriores (Pájaros)</p>
+              <p class="text-brand-body mt-1">4 series de 15 reps. Elimina la rotación interna de hombros.</p>
+            </div>
+            <div class="bg-brand-void p-3 rounded-lg border border-brand-border">
+              <p class="font-bold text-brand-ivory">4. Plancha Abdominal Hollow Body</p>
+              <p class="text-brand-body mt-1">3 series de 45 segundos con pelvis en retroversión.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- ========================================== -->
-    <!-- TAB 4: NUTRICIÓN & ASEO                   -->
+    <!-- TAB 5: NUTRICIÓN & ASEO                   -->
     <!-- ========================================== -->
     <div id="tab-content-nutrition" class="tab-pane hidden space-y-5">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
-          <h3 class="text-base font-bold text-slate-100 flex items-center gap-2"><span>🍽️</span> Horarios Fijos de Alimentación</h3>
-          <div class="space-y-2 text-slate-300">
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800"><strong class="text-emerald-400">07:50 – 08:20 | Desayuno Anabólico:</strong> 3–4 huevos enteros, fruta/avena y café negro.</div>
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800"><strong class="text-emerald-400">11:40 – 12:00 (Lun a Vie) | Almuerzo Fijo:</strong> Arroz/papa + pechuga/res + ensalada antes de salir puntual a las 12:00 a la Uni.</div>
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800"><strong class="text-emerald-400">15:00 ó 17:00 | Tupper en Uni:</strong> Nueces, almendras o sándwich proteico en huecos.</div>
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800"><strong class="text-emerald-400">22:30 – 23:00 | Cena Pro-HGH:</strong> Proteína magra + verduras verdes (cero azúcares).</div>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-3">
+          <h3 class="text-base font-editorial font-bold text-brand-ivory flex items-center gap-2"><span>🍽️</span> Horarios Fijos de Alimentación</h3>
+          <div class="space-y-2 text-brand-body">
+            <div class="p-3 bg-brand-void rounded-lg border border-brand-border"><strong class="text-brand-champagne font-code">07:50 – 08:20 | Desayuno Anabólico:</strong> 3–4 huevos enteros, fruta/avena y café negro.</div>
+            <div class="p-3 bg-brand-void rounded-lg border border-brand-border"><strong class="text-brand-champagne font-code">11:40 – 12:00 (Lun a Vie) | Almuerzo Fijo:</strong> Arroz/papa + pechuga/res + ensalada antes de salir puntual a las 12:00 a la Uni.</div>
+            <div class="p-3 bg-brand-void rounded-lg border border-brand-border"><strong class="text-brand-champagne font-code">15:00 ó 17:00 | Tupper en Uni:</strong> Nueces, almendras o sándwich proteico en huecos entre clases.</div>
+            <div class="p-3 bg-brand-void rounded-lg border border-brand-border"><strong class="text-brand-champagne font-code">22:30 – 23:00 | Cena Pro-HGH:</strong> Proteína magra + verduras verdes (cero azúcares o harinas).</div>
           </div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
-          <h3 class="text-base font-bold text-slate-100 flex items-center gap-2"><span>🚿</span> Ducha Fría Matutina & Templada Nocturna</h3>
-          <div class="space-y-2 text-slate-300">
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800"><strong class="text-cyan-400">07:50 | Ducha Fresca Anti-Sueño:</strong> Termina tu baño con 60 segundos de agua fresca para disparar noradrenalina y dopamina (elimina la pesadez matutina).</div>
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800"><strong class="text-cyan-400">22:50 | Ducha Tibia Pro-Fase N3:</strong> Baja la temperatura central del cuerpo al salir, ayudándote a dormir profundo en menos de 15 minutos.</div>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-3">
+          <h3 class="text-base font-editorial font-bold text-brand-ivory flex items-center gap-2"><span>🚿</span> Ducha Fría Matutina & Templada Nocturna</h3>
+          <div class="space-y-2 text-brand-body">
+            <div class="p-3 bg-brand-void rounded-lg border border-brand-border"><strong class="text-brand-champagne font-code">07:50 | Ducha Fresca Anti-Sueño:</strong> Termina tu baño con 60 segundos de agua fresca para disparar noradrenalina y dopamina (elimina la pesadez matutina).</div>
+            <div class="p-3 bg-brand-void rounded-lg border border-brand-border"><strong class="text-brand-champagne font-code">22:50 | Ducha Tibia Pro-Fase N3:</strong> Baja la temperatura central del cuerpo al salir, ayudándote a dormir profundo en menos de 15 minutos.</div>
           </div>
         </div>
       </div>
@@ -367,9 +504,9 @@
 
   </main>
 
-  <!-- Barra de Navegación Inferior Flotante -->
-  <div class="fixed bottom-3 inset-x-3 max-w-md mx-auto glass-nav border border-slate-700/70 rounded-2xl p-2 shadow-2xl z-40 md:hidden flex justify-around text-[10px] text-slate-400 font-medium">
-    <button onclick="switchTab('horario')" id="mob-horario" class="flex flex-col items-center gap-1 text-indigo-400 font-bold">
+  <!-- Barra de Navegación Inferior Flotante (Móvil) -->
+  <div class="fixed bottom-3 inset-x-3 max-w-md mx-auto glass-nav border border-brand-border rounded-2xl p-2 shadow-2xl z-40 md:hidden flex justify-around text-[10px] text-brand-muted font-medium">
+    <button onclick="switchTab('horario')" id="mob-horario" class="flex flex-col items-center gap-1 text-brand-gold font-bold">
       <span class="text-base">📅</span> Horario
     </button>
     <button onclick="switchTab('rules')" id="mob-rules" class="flex flex-col items-center gap-1">
@@ -389,30 +526,33 @@
   <script>
     const isNativeApk = typeof window.AndroidBridge !== 'undefined';
     if (isNativeApk) {
-      const dlBtn1 = document.getElementById('apk-download-btn');
-      if (dlBtn1) dlBtn1.style.display = 'none';
+      const dlBtn = document.getElementById('apk-download-btn');
+      if (dlBtn) dlBtn.style.display = 'none';
+      const pinBtn = document.getElementById('widget-pin-btn');
+      if (pinBtn) pinBtn.classList.remove('hidden');
     }
 
     let rescueMode9AM = false;
 
     function switchTab(tabId) {
       document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
-      document.getElementById('tab-content-' + tabId).classList.remove('hidden');
+      const targetPane = document.getElementById('tab-content-' + tabId);
+      if (targetPane) targetPane.classList.remove('hidden');
 
       document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.className = "tab-button px-4 py-2 rounded-xl font-semibold transition-all shrink-0 bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800";
+        btn.className = "tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-surface text-brand-body hover:text-brand-ivory border border-brand-border";
       });
       const activeBtn = document.getElementById('tab-btn-' + tabId);
       if (activeBtn) {
-        activeBtn.className = "tab-button px-4 py-2 rounded-xl font-semibold transition-all shrink-0 bg-indigo-600 text-white shadow-md shadow-indigo-600/20";
+        activeBtn.className = "tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-gold text-brand-void border border-brand-gold shadow-sm";
       }
 
       ['horario', 'rules', 'hgh', 'fitness', 'nutrition'].forEach(id => {
         const mobEl = document.getElementById('mob-' + id);
         if (mobEl) {
           mobEl.className = (id === tabId)
-            ? "flex flex-col items-center gap-1 text-indigo-400 font-bold"
-            : "flex flex-col items-center gap-1 text-slate-400";
+            ? "flex flex-col items-center gap-1 text-brand-gold font-bold"
+            : "flex flex-col items-center gap-1 text-brand-muted";
         }
       });
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -448,50 +588,50 @@
           { time: "11:40 – 12:00", sh: 11, sm: 40, eh: 12, em: 0, title: "Almuerzo en casa & Salida puntual 12:00", cat: "care", icon: "🍽️", desc: "Comida nutritiva en casa y salida fija a las 12:00 rumbo a la facultad." },
           { time: "12:00 – 14:00", sh: 12, sm: 0, eh: 14, em: 0, title: "Traslado Ida (2h) — Videos Cursos + Lectura", cat: "travel", icon: "📖", desc: "45 min de repaso de cursos en video + 45 min de lectura activa." },
           { time: "14:00 – 15:00", sh: 14, sm: 0, eh: 15, em: 0, title: "🚀 Hora de Oro en Biblioteca Uni (Proyectos / Cursos)", cat: "projects", icon: "💻", desc: "Llegas a las 14:00 a la facultad: 1h libre antes de Sistemas Operativos para tus proyectos o cursos." },
-          { time: "15:00 – 20:00", sh: 15, sm: 0, eh: 20, em: 0, title: "Universidad (Sistemas Op, Metodología, Inf III)", cat: "uni", icon: "🏛️", desc: "15h: Sistemas Op | 17h: Metodología | 19h: Inf III. En huecos de 16h y 18h: terminar tareas." },
-          { time: "20:00 – 22:30", sh: 20, sm: 0, eh: 22, em: 30, title: "Traslado de Regreso (2.5h) — Siesta 25m", cat: "travel", icon: "🚌", desc: "Desconexión auditiva y descanso ocular." },
-          { time: "22:30 – 23:15", sh: 22, sm: 30, eh: 23, em: 15, title: "Cena Pro-HGH, Ducha Tibia & S23 a 3m", cat: "care", icon: "🥗", desc: "Cena ligera. Deja el celular lejos de la cama para no recaer a las 7 AM." },
-          { time: "23:15 – 07:00", sh: 23, sm: 15, eh: 7, em: 0, title: "Sueño Anabólico HGH (7.5h — 5 Ciclos)", cat: "hgh", icon: "💤", desc: "Recuperación muscular completa y liberación hormonal profunda." }
+          { time: "15:00 – 20:00", sh: 15, sm: 0, eh: 20, em: 0, title: "Universidad (Sistemas Op, Metodología, Inf III)", cat: "uni", icon: "🏛️", desc: "Bloque continuo de clases de carrera técnica." },
+          { time: "20:00 – 22:30", sh: 20, sm: 0, eh: 22, em: 30, title: "Traslado Vuelta (2.5h) — Siesta 25m / Audio", cat: "travel", icon: "🚌", desc: "Descanso sensorial para recargar el sistema nervioso." },
+          { time: "22:30 – 23:15", sh: 22, sm: 30, eh: 23, em: 15, title: "Cena Pro-HGH, Dead Hang & Celular Lejos", cat: "care", icon: "🥗", desc: "Cero carbohidratos simples, colgarse de la barra y S23 a 3m." },
+          { time: "23:15 – 07:00", sh: 23, sm: 15, eh: 7, em: 0, title: "Sueño Profundo (7.5h Reparadoras)", cat: "hgh", icon: "💤", desc: "Recuperación hormonal óptima." }
         ]
       },
       miercoles: {
         title: "Miércoles",
-        sub: "Despertar 07:00 • Cursos 50m + Videos • Salida fija 12:00 a Uni",
+        sub: "Despertar 07:00 • Cursos 50m • Salida 12:00 a Uni • Clases 14h-20h",
         events: [
-          { time: "07:00 – 07:15", sh: 7, sm: 0, eh: 7, em: 15, title: "Shock Anti-Inercia (S23 a 3m + Luz + Dead Hang)", cat: "hgh", icon: "🌅", desc: "Levántate de inmediato, luz natural y 2 min colgado en barra." },
-          { time: "07:15 – 07:50", sh: 7, sm: 15, eh: 7, em: 50, title: "Entrenamiento V-Taper (Pierna & Pliometría)", cat: "fitness", icon: "🏋️", desc: "Sentadillas búlgaras, saltos explosivos, pantorrillas en escalón." },
-          { time: "07:50 – 08:20", sh: 7, sm: 50, eh: 8, em: 20, title: "Ducha Fresca & Desayuno Alto en Proteína", cat: "care", icon: "🚿", desc: "Cuidado personal y combustible limpio." },
-          { time: "08:20 – 10:50", sh: 8, sm: 20, eh: 10, em: 50, title: "Trabajo Remoto (Bloque 3 de 2.5h)", cat: "work", icon: "💼", desc: "Avance laboral consistente (7.5h acumuladas)." },
-          { time: "10:50 – 11:40", sh: 10, sm: 50, eh: 11, em: 40, title: "🎓 Cursos & Certificaciones (Práctica en PC)", cat: "courses", icon: "🎓", desc: "50 min diarios de avance práctico en tus cursos." },
-          { time: "11:40 – 12:00", sh: 11, sm: 40, eh: 12, em: 0, title: "Almuerzo & Salida puntual 12:00", cat: "care", icon: "🍽️", desc: "Comida en casa y salida a las 12:00." },
-          { time: "12:00 – 14:00", sh: 12, sm: 0, eh: 14, em: 0, title: "Traslado Ida (2h) — Cursos + Lectura", cat: "travel", icon: "📖", desc: "Teoría de cursos + lectura activa en transporte." },
-          { time: "14:00 – 20:00", sh: 14, sm: 0, eh: 20, em: 0, title: "Universidad (Clases vespertinas)", cat: "uni", icon: "🏛️", desc: "Inglés, Derecho, Matemáticas III, Programación III." },
-          { time: "20:00 – 22:30", sh: 20, sm: 0, eh: 22, em: 30, title: "Traslado Vuelta (2.5h)", cat: "travel", icon: "🚌", desc: "Audio relajante o siesta corta." },
-          { time: "22:30 – 23:15", sh: 22, sm: 30, eh: 23, em: 15, title: "Cena Ligera, Ducha & S23 Lejos", cat: "care", icon: "🥗", desc: "Preparación nocturna sin pantallas estimulantes." },
-          { time: "23:15 – 07:00", sh: 23, sm: 15, eh: 7, em: 0, title: "Sueño Óptimo HGH (7.5h — 5 Ciclos)", cat: "hgh", icon: "💤", desc: "Regeneración celular." }
+          { time: "07:00 – 07:15", sh: 7, sm: 0, eh: 7, em: 15, title: "Shock Anti-Inercia (S23 a 3m + Luz + Dead Hang)", cat: "hgh", icon: "🌅", desc: "Levantarse inmediatamente al sonar el S23. 2 min colgado en barra y agua con sal." },
+          { time: "07:15 – 07:50", sh: 7, sm: 15, eh: 7, em: 50, title: "Entrenamiento V-Taper (Pierna Atlética)", cat: "fitness", icon: "🏋️", desc: "Sentadilla búlgara, elevaciones de pantorrilla, puente de glúteo y saltos al pecho." },
+          { time: "07:50 – 08:20", sh: 7, sm: 50, eh: 8, em: 20, title: "Ducha Fresca Anti-Sueño & Desayuno", cat: "care", icon: "🚿", desc: "Choque térmico para elevar dopamina matutina." },
+          { time: "08:20 – 10:50", sh: 8, sm: 20, eh: 10, em: 50, title: "Trabajo Remoto (Bloque 3 de 2.5h)", cat: "work", icon: "💼", desc: "2.5 horas laborales (7.5 horas acumuladas en la semana)." },
+          { time: "10:50 – 11:40", sh: 10, sm: 50, eh: 11, em: 40, title: "🎓 Cursos & Certificaciones (Práctica en PC)", cat: "courses", icon: "🎓", desc: "50 minutos de práctica en la computadora." },
+          { time: "11:40 – 12:00", sh: 11, sm: 40, eh: 12, em: 0, title: "Almuerzo en casa & Salida puntual 12:00", cat: "care", icon: "🍽️", desc: "Comer antes de salir. Salida fija a las 12:00 hacia la facultad." },
+          { time: "12:00 – 14:00", sh: 12, sm: 0, eh: 14, em: 0, title: "Traslado Ida (2h) — Videos de Cursos + Lectura", cat: "travel", icon: "📖", desc: "45 min de videos de cursos + 45 min de lectura." },
+          { time: "14:00 – 20:00", sh: 14, sm: 0, eh: 20, em: 0, title: "Universidad (Clases + Biblioteca)", cat: "uni", icon: "🏛️", desc: "14h: Inglés | 16h: Derecho | 18h: Mate III | 19h: Prog III." },
+          { time: "20:00 – 22:30", sh: 20, sm: 0, eh: 22, em: 30, title: "Traslado Vuelta (2.5h) — Siesta 25m / Audio", cat: "travel", icon: "🚌", desc: "Micro-siesta sensorial." },
+          { time: "22:30 – 23:15", sh: 22, sm: 30, eh: 23, em: 15, title: "Cena Pro-HGH & S23 Lejos", cat: "care", icon: "🥗", desc: "Proteína magra y verduras." },
+          { time: "23:15 – 07:00", sh: 23, sm: 15, eh: 7, em: 0, title: "Sueño Profundo (7.5h)", cat: "hgh", icon: "💤", desc: "5 ciclos completos de 90 min." }
         ]
       },
       jueves: {
         title: "Jueves",
         sub: "Despertar 07:00 • Salida fija 12:00 • 14h Hora de Oro en Biblioteca • Clases 15h-20h",
         events: [
-          { time: "07:00 – 07:15", sh: 7, sm: 0, eh: 7, em: 15, title: "Shock Anti-Inercia (S23 a 3m + Luz + Dead Hang)", cat: "hgh", icon: "🌅", desc: "Respiración profunda, agua y colgado de barra." },
-          { time: "07:15 – 07:50", sh: 7, sm: 15, eh: 7, em: 50, title: "Entrenamiento V-Taper (Torso Denso & Postura)", cat: "fitness", icon: "🏋️", desc: "Remo unilateral con mochila, flexiones diamante, vuelos posteriores." },
-          { time: "07:50 – 08:20", sh: 7, sm: 50, eh: 8, em: 20, title: "Ducha Fresca, Aseo & Desayuno", cat: "care", icon: "🚿", desc: "Aseo matutino y nutrición." },
-          { time: "08:20 – 10:50", sh: 8, sm: 20, eh: 10, em: 50, title: "Trabajo Remoto (Bloque 4 de 2.5h)", cat: "work", icon: "💼", desc: "2.5h laborales (10h acumuladas)." },
-          { time: "10:50 – 11:40", sh: 10, sm: 50, eh: 11, em: 40, title: "🎓 Cursos & Certificaciones (Práctica en PC)", cat: "courses", icon: "🎓", desc: "50 minutos de práctica técnica en tus cursos." },
-          { time: "11:40 – 12:00", sh: 11, sm: 40, eh: 12, em: 0, title: "Almuerzo & Salida puntual 12:00", cat: "care", icon: "🍽️", desc: "Comida en casa y salida fija a las 12:00 rumbo a la universidad." },
-          { time: "12:00 – 14:00", sh: 12, sm: 0, eh: 14, em: 0, title: "Traslado Ida (2h) — Cursos + Lectura", cat: "travel", icon: "📖", desc: "Lectura enriquecedora y videos de cursos." },
-          { time: "14:00 – 15:00", sh: 14, sm: 0, eh: 15, em: 0, title: "🚀 Hora de Oro en Biblioteca Uni (Proyectos / Cursos)", cat: "projects", icon: "💻", desc: "Llegas a las 14:00 a la facultad: 1h libre antes de Sistemas Operativos para tus proyectos o cursos." },
-          { time: "15:00 – 20:00", sh: 15, sm: 0, eh: 20, em: 0, title: "Universidad", cat: "uni", icon: "🏛️", desc: "15h: Sistemas Op | 17h: Metodología | 19h: Inf III. Huecos de 16h y 18h: liquidar tareas." },
-          { time: "20:00 – 22:30", sh: 20, sm: 0, eh: 22, em: 30, title: "Traslado Vuelta (2.5h)", cat: "travel", icon: "🚌", desc: "Desconexión del día." },
-          { time: "22:30 – 23:15", sh: 22, sm: 30, eh: 23, em: 15, title: "Cena & Rutina de Cierre (S23 a 3m)", cat: "care", icon: "🥗", desc: "Cena ligera rica en zinc y magnesio." },
-          { time: "23:15 – 07:00", sh: 23, sm: 15, eh: 7, em: 0, title: "Sueño Máximo HGH (7.5h — 5 Ciclos)", cat: "hgh", icon: "💤", desc: "Descanso reparador." }
+          { time: "07:00 – 07:15", sh: 7, sm: 0, eh: 7, em: 15, title: "Shock Anti-Inercia (S23 a 3m + Luz + Dead Hang)", cat: "hgh", icon: "🌅", desc: "Cero recaída en cama: pararse a apagar el S23, luz solar y colgarse de la barra." },
+          { time: "07:15 – 07:50", sh: 7, sm: 15, eh: 7, em: 50, title: "Entrenamiento V-Taper (Torso & Densidad)", cat: "fitness", icon: "🏋️", desc: "Remos unilaterales, flexiones diamante, vuelos posteriores y plancha hollow." },
+          { time: "07:50 – 08:20", sh: 7, sm: 50, eh: 8, em: 20, title: "Ducha Fresca, Skincare & Desayuno", cat: "care", icon: "🚿", desc: "Ducha fresca y desayuno anabólico." },
+          { time: "08:20 – 10:50", sh: 8, sm: 20, eh: 10, em: 50, title: "Trabajo Remoto (Bloque 4 de 2.5h)", cat: "work", icon: "💼", desc: "2.5 horas (10 horas acumuladas)." },
+          { time: "10:50 – 11:40", sh: 10, sm: 50, eh: 11, em: 40, title: "🎓 Cursos & Certificaciones (Práctica en PC)", cat: "courses", icon: "🎓", desc: "50 minutos de práctica en proyectos de tus cursos." },
+          { time: "11:40 – 12:00", sh: 11, sm: 40, eh: 12, em: 0, title: "Almuerzo en casa & Salida puntual 12:00", cat: "care", icon: "🍽️", desc: "Almuerzo nutritivo y salida fija a las 12:00 hacia la facultad." },
+          { time: "12:00 – 14:00", sh: 12, sm: 0, eh: 14, em: 0, title: "Traslado Ida (2h) — Videos Cursos + Lectura", cat: "travel", icon: "📖", desc: "45 min de teoría en video + lectura." },
+          { time: "14:00 – 15:00", sh: 14, sm: 0, eh: 15, em: 0, title: "🚀 Hora de Oro en Biblioteca Uni (Proyectos / Cursos)", cat: "projects", icon: "💻", desc: "Llegada al campus a las 14:00: 1 hora de biblioteca de alto foco antes de Sistemas Operativos." },
+          { time: "15:00 – 20:00", sh: 15, sm: 0, eh: 20, em: 0, title: "Universidad (Sistemas Op, Metodología, Inf III)", cat: "uni", icon: "🏛️", desc: "Clases vespertinas." },
+          { time: "20:00 – 22:30", sh: 20, sm: 0, eh: 22, em: 30, title: "Traslado Vuelta (2.5h) — Siesta 25m / Audio", cat: "travel", icon: "🚌", desc: "Descanso en trayecto." },
+          { time: "22:30 – 23:15", sh: 22, sm: 30, eh: 23, em: 15, title: "Cena Pro-HGH & S23 Lejos", cat: "care", icon: "🥗", desc: "Proteína y vegetales." },
+          { time: "23:15 – 07:00", sh: 23, sm: 15, eh: 7, em: 0, title: "Sueño Profundo (7.5h)", cat: "hgh", icon: "💤", desc: "5 ciclos completos." }
         ]
       },
       viernes: {
         title: "Viernes",
-        sub: "Despertar 07:00 • Cursos 1h 05m • Salida temprana Uni (17:30)",
+        sub: "Despertar 07:00 • 1h 10m Cursos • Salida 12:00 • Uni 14h-17:30 • ¡Noche Libre!",
         events: [
           { time: "07:00 – 07:30", sh: 7, sm: 0, eh: 7, em: 30, title: "Shock Anti-Inercia & Movilidad Articular", cat: "fitness", icon: "🧘", desc: "Estiramientos, descompresión espinal y movilidad articular." },
           { time: "07:30 – 08:00", sh: 7, sm: 30, eh: 8, em: 0, title: "Ducha, Aseo & Desayuno completo", cat: "care", icon: "🚿", desc: "Arranque del viernes." },
@@ -510,7 +650,7 @@
         sub: "Cierre de Trabajo Remoto + 1.5h Cursos + 2h Proyectos",
         events: [
           { time: "08:00 – 08:45", sh: 8, sm: 0, eh: 8, em: 45, title: "Despertar, Descompresión & Desayuno Gourmet", cat: "care", icon: "🍳", desc: "Café de calidad, huevos con aguacate." },
-          { time: "08:45 – 14:15", sh: 8, sm: 45, eh: 14, em: 15, title: "💼 Trabajo Remoto (Cierre semanal)", cat: "work", icon: "💼", desc: "Bloque con pausa activa para dejar completadas las horas de la semana." },
+          { time: "08:45 – 14:15", sh: 8, sm: 45, eh: 14, em: 15, title: "💼 Trabajo Remoto (Cierre semanal)", cat: "work", icon: "💼", desc: "Bloque con pausa activa para dejar completadas las 20 horas de la semana." },
           { time: "14:15 – 15:15", sh: 14, sm: 15, eh: 15, em: 15, title: "Comida reconfortante & Sobremesa", cat: "care", icon: "🍽️", desc: "Comida relajada sin prisas de traslados." },
           { time: "15:15 – 16:45", sh: 15, sm: 15, eh: 16, em: 45, title: "🎓 Cursos & Certificaciones (Sesión Práctica 1.5h)", cat: "courses", icon: "🎓", desc: "Avance profundo de fin de semana en tus cursos." },
           { time: "16:45 – 18:45", sh: 16, sm: 45, eh: 18, em: 45, title: "🚀 Gran Bloque de Proyectos Personales (2h)", cat: "projects", icon: "💻", desc: "Construcción profunda de tus ideas o aplicaciones." },
@@ -520,11 +660,11 @@
       },
       domingo: {
         title: "Domingo",
-        sub: "✨ DÍA LIBRE DE UNI Y TRABAJO — +1h 15m Ligera de Cursos",
+        sub: "✨ DÍA 100% LIBRE DE UNI Y TRABAJO — +1h 15m Ligera de Cursos",
         events: [
           { time: "08:30 – 09:30", sh: 8, sm: 30, eh: 9, em: 30, title: "Despertar natural sin prisas & Hidratación", cat: "hgh", icon: "☕", desc: "Despertar cuando el cuerpo lo pida. Descompresión espinal suave." },
           { time: "09:30 – 10:30", sh: 9, sm: 30, eh: 10, em: 30, title: "Desayuno relajado & Lectura por placer", cat: "care", icon: "📖", desc: "Leer tu libro favorito con café." },
-          { time: "10:30 – 11:45", sh: 10, sm: 30, eh: 11, em: 45, title: "🎓 Cursos & Certificaciones (1h 15m sin presión)", cat: "courses", icon: "🎓", desc: "Sesión dominical tranquila para cerrar la semana con más de 8.5 horas de cursos." },
+          { time: "10:30 – 11:45", sh: 10, sm: 30, eh: 11, em: 45, title: "🎓 Cursos & Certificaciones (1h 15m sin presión)", cat: "courses", icon: "🎓", desc: "Sesión dominical tranquila para cerrar la semana con más de 12 horas de cursos." },
           { time: "11:45 – 14:30", sh: 11, sm: 45, eh: 14, em: 30, title: "Tiempo Libre, Paseo, Sol & Familia", cat: "leisure", icon: "🌳", desc: "Salud mental, sol natural (vitamina D para huesos y testosterona)." },
           { time: "14:30 – 16:00", sh: 14, sm: 30, eh: 16, em: 0, title: "Comida familiar / Especial", cat: "care", icon: "🍲", desc: "Buena nutrición y convivencia." },
           { time: "16:00 – 19:30", sh: 16, sm: 0, eh: 19, em: 30, title: "Ocio, Videojuegos o Descanso Libre", cat: "leisure", icon: "🎮", desc: "Total libertad creativa o descansar." },
@@ -540,7 +680,7 @@
       if (!rescueMode9AM || dayKey === "sabado" || dayKey === "domingo") {
         return base;
       }
-      // Si el usuario activó el Modo Rescate 09:00 AM entre semana (salida fija a las 12:00 de Lunes a Viernes):
+      // Modo Rescate 09:00 AM entre semana (salida fija a las 12:00 de Lunes a Viernes):
       const afternoonEvents = base.events.filter(e => e.sh >= 12 || e.sh === 0);
       const rescueMorning = [
         { time: "09:00 – 09:25", sh: 9, sm: 0, eh: 9, em: 25, title: "🚨 Rescate 9AM: Dead Hang + V-Taper Express 12m + Ducha Fría", cat: "fitness", icon: "⚡", desc: "Activación muscular rápida + ducha fría y desayuno en marcha." },
@@ -559,10 +699,10 @@
       rescueMode9AM = !rescueMode9AM;
       const btn = document.getElementById('rescue-mode-btn');
       if (rescueMode9AM) {
-        btn.className = "text-[11px] px-2.5 py-1 rounded-lg bg-rose-600 text-white border border-rose-400 font-bold shadow-md transition-all";
+        btn.className = "font-code text-[11px] px-2.5 py-1 rounded-lg bg-brand-burgundy text-brand-ivory border border-brand-champagne font-bold shadow-md transition-all";
         btn.textContent = "🚨 Modo Rescate 9 AM: ACTIVO";
       } else {
-        btn.className = "text-[11px] px-2.5 py-1 rounded-lg bg-rose-500/15 hover:bg-rose-500/25 text-rose-300 border border-rose-500/30 font-bold transition-all";
+        btn.className = "font-code text-[11px] px-2.5 py-1 rounded-lg bg-brand-burgundy/30 hover:bg-brand-burgundy/50 text-brand-champagne border border-brand-burgundy font-medium transition-all";
         btn.textContent = "🚨 ¿Despertaste 9 AM? Modo Rescate: OFF";
       }
       computeLiveActiveBlock();
@@ -570,15 +710,15 @@
     }
 
     const categoryStyles = {
-      courses: { bg: "bg-sky-500/15", border: "border-sky-500/40", text: "text-sky-300", badge: "Cursos Diarios" },
-      hgh: { bg: "bg-indigo-500/10", border: "border-indigo-500/30", text: "text-indigo-400", badge: "HGH & Sueño" },
-      fitness: { bg: "bg-rose-500/10", border: "border-rose-500/30", text: "text-rose-400", badge: "Físico & Gym" },
-      care: { bg: "bg-emerald-500/10", border: "border-emerald-500/30", text: "text-emerald-400", badge: "Comida & Aseo" },
-      work: { bg: "bg-amber-500/10", border: "border-amber-500/30", text: "text-amber-400", badge: "Trabajo Remoto" },
-      projects: { bg: "bg-purple-500/10", border: "border-purple-500/30", text: "text-purple-400", badge: "Proyectos" },
-      uni: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-400", badge: "Universidad" },
-      travel: { bg: "bg-cyan-500/10", border: "border-cyan-500/30", text: "text-cyan-400", badge: "Traslado / Lectura" },
-      leisure: { bg: "bg-pink-500/10", border: "border-pink-500/30", text: "text-pink-400", badge: "Ocio & Recarga" }
+      courses: { bg: "bg-brand-elevated", border: "border-brand-gold/60", text: "text-brand-champagne", badge: "Cursos Diarios" },
+      hgh: { bg: "bg-brand-surface", border: "border-brand-gold/40", text: "text-brand-champagne", badge: "HGH & Sueño" },
+      fitness: { bg: "bg-brand-burgundy/25", border: "border-brand-burgundy", text: "text-brand-champagne", badge: "Físico & Gym" },
+      care: { bg: "bg-brand-spruce/30", border: "border-brand-spruce", text: "text-emerald-300", badge: "Comida & Aseo" },
+      work: { bg: "bg-brand-elevated", border: "border-brand-border", text: "text-brand-gold", badge: "Trabajo Remoto" },
+      projects: { bg: "bg-brand-surface", border: "border-brand-border", text: "text-brand-ivory", badge: "Proyectos" },
+      uni: { bg: "bg-brand-void", border: "border-brand-border", text: "text-brand-body", badge: "Universidad" },
+      travel: { bg: "bg-brand-surface", border: "border-brand-border", text: "text-brand-taupe", badge: "Traslado / Lectura" },
+      leisure: { bg: "bg-brand-burgundy/15", border: "border-brand-border", text: "text-brand-champagne", badge: "Ocio & Recarga" }
     };
 
     function getTodayKey() {
@@ -673,117 +813,109 @@
       const label = document.getElementById('alarm-label');
       const dot = document.getElementById('alarm-dot');
       if (enabled) {
-        pill.className = "text-xs px-2.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-bold flex items-center gap-1.5";
-        dot.className = "w-2 h-2 rounded-full bg-emerald-400 animate-pulse";
+        pill.className = "text-xs px-2.5 py-1.5 rounded-lg bg-brand-spruce/60 text-brand-champagne border border-brand-gold/30 font-medium flex items-center gap-1.5";
+        dot.className = "w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse";
         label.textContent = "🔔 Alarmas ON";
       } else {
-        pill.className = "text-xs px-2.5 py-1.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700 font-bold flex items-center gap-1.5";
-        dot.className = "w-2 h-2 rounded-full bg-slate-500";
+        pill.className = "text-xs px-2.5 py-1.5 rounded-lg bg-brand-surface text-brand-muted border border-brand-border font-medium flex items-center gap-1.5";
+        dot.className = "w-1.5 h-1.5 rounded-full bg-brand-muted";
         label.textContent = "🔕 Alarmas OFF";
       }
     }
 
-    const dayButtonsContainer = document.getElementById("day-buttons");
-    const days = [
-      { key: "lunes", label: "Lun" },
-      { key: "martes", label: "Mar" },
-      { key: "miercoles", label: "Mié" },
-      { key: "jueves", label: "Jue" },
-      { key: "viernes", label: "Vie" },
-      { key: "sabado", label: "Sáb" },
-      { key: "domingo", label: "Dom (Libre)" }
-    ];
-
     function renderDayButtons() {
-      dayButtonsContainer.innerHTML = days.map(d => {
+      const container = document.getElementById('day-buttons');
+      const days = [
+        { key: "lunes", label: "Lun" },
+        { key: "martes", label: "Mar" },
+        { key: "miercoles", label: "Mié" },
+        { key: "jueves", label: "Jue" },
+        { key: "viernes", label: "Vie" },
+        { key: "sabado", label: "Sáb" },
+        { key: "domingo", label: "Dom" }
+      ];
+      const todayKey = getTodayKey();
+
+      container.innerHTML = days.map(d => {
         const isActive = d.key === currentDay;
-        const isSun = d.key === "domingo";
-        const baseClass = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 ";
-        const activeClass = isActive 
-          ? (isSun ? "bg-emerald-500 text-slate-950 shadow-sm" : "bg-indigo-600 text-white shadow-sm") 
-          : "bg-slate-950 text-slate-400 hover:text-slate-200 border border-slate-800";
-        return `<button onclick="setDay('${d.key}')" class="${baseClass} ${activeClass}">${d.label}</button>`;
-      }).join("");
+        const isToday = d.key === todayKey;
+        const baseClass = "px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 flex items-center gap-1.5 border";
+        const stateClass = isActive
+          ? "bg-brand-gold text-brand-void border-brand-gold shadow-sm"
+          : "bg-brand-surface text-brand-body hover:text-brand-ivory border-brand-border";
+        const todayDot = isToday ? `<span class="w-1.5 h-1.5 rounded-full ${isActive ? 'bg-brand-void' : 'bg-brand-gold'}"></span>` : "";
+        return `<button onclick="selectDay('${d.key}')" class="${baseClass} ${stateClass}">${d.label} ${todayDot}</button>`;
+      }).join('');
     }
 
-    function setDay(dayKey) {
+    function selectDay(dayKey) {
       currentDay = dayKey;
       renderDayButtons();
       renderTimeline();
     }
 
     function renderTimeline() {
-      const container = document.getElementById("timeline-container");
       const dayData = getActiveScheduleForDay(currentDay);
+      const container = document.getElementById('timeline-container');
       const todayKey = getTodayKey();
-      
-      const filteredEvents = dayData.events.map((ev, idx) => ({ ...ev, originalIdx: idx })).filter(e => {
+      const isViewingToday = currentDay === todayKey;
+
+      const filteredEvents = dayData.events.filter(ev => {
         if (currentFilter === "all") return true;
-        return e.cat === currentFilter;
+        return ev.cat === currentFilter;
       });
 
-      let html = `
-        <div class="flex items-baseline justify-between pt-1 mb-2">
-          <div>
-            <h2 class="text-base sm:text-lg font-bold text-slate-100">${dayData.title}</h2>
-            <p class="text-xs text-slate-400">${dayData.sub}</p>
-          </div>
-          <span class="text-xs font-semibold text-slate-400 bg-slate-900 px-2 py-0.5 rounded-lg border border-slate-800">${filteredEvents.length} bloques</span>
-        </div>
-      `;
-
       if (filteredEvents.length === 0) {
-        html += `
-          <div class="text-center py-8 border border-dashed border-slate-800 rounded-2xl text-xs text-slate-400">
-            No hay actividades en esta categoría para el ${dayData.title}.
+        container.innerHTML = `
+          <div class="bg-brand-surface border border-brand-border rounded-xl p-8 text-center text-brand-muted text-xs">
+            No hay actividades para el filtro seleccionado.
           </div>
         `;
-      } else {
-        html += `<div class="space-y-2">`;
-        filteredEvents.forEach(e => {
-          const style = categoryStyles[e.cat] || categoryStyles.care;
-          const isCurrentNow = (currentDay === todayKey && e.originalIdx === activeBlockIndexToday);
-          const ringClass = isCurrentNow ? "ring-2 ring-indigo-400 bg-indigo-950/40" : style.bg;
-          const badgeText = isCurrentNow ? `⚡ EN CURSO • ${style.badge}` : style.badge;
+        return;
+      }
 
-          html += `
-            <div class="p-3 sm:p-3.5 rounded-2xl border ${style.border} ${ringClass} transition-all">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
-                <div class="flex items-start sm:items-center gap-2.5">
-                  <span class="text-lg sm:text-xl shrink-0 mt-0.5 sm:mt-0">${e.icon}</span>
-                  <div>
-                    <h4 class="font-bold text-xs sm:text-sm text-slate-100">${e.title}</h4>
-                    <p class="text-[11px] sm:text-xs text-slate-300 mt-0.5 leading-relaxed">${e.desc}</p>
+      container.innerHTML = filteredEvents.map((ev, i) => {
+        const originalIndex = dayData.events.indexOf(ev);
+        const isCurrentlyActive = isViewingToday && originalIndex === activeBlockIndexToday;
+        const cat = categoryStyles[ev.cat] || categoryStyles.care;
+
+        return `
+          <div class="relative bg-brand-surface border ${isCurrentlyActive ? 'border-brand-gold shadow-lg shadow-brand-gold/10' : 'border-brand-border'} rounded-xl p-3.5 sm:p-4 transition-all">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-start gap-3 min-w-0">
+                <span class="text-xl sm:text-2xl shrink-0 mt-0.5">${ev.icon}</span>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-code text-xs font-bold text-brand-champagne">${ev.time}</span>
+                    <span class="font-code text-[10px] px-2 py-0.5 rounded ${cat.bg} border ${cat.border} ${cat.text} font-medium">${cat.badge}</span>
+                    ${isCurrentlyActive ? '<span class="font-code text-[10px] px-2 py-0.5 rounded bg-brand-gold text-brand-void font-bold animate-pulse">● AHORA MISMO</span>' : ''}
                   </div>
-                </div>
-                <div class="flex items-center gap-1.5 self-start sm:self-auto shrink-0 mt-1 sm:mt-0">
-                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold border ${style.border} ${style.text} bg-slate-950/60">${badgeText}</span>
-                  <span class="font-mono text-[11px] font-bold text-slate-200 bg-slate-950 px-2 py-1 rounded-md border border-slate-800">${e.time}</span>
+                  <h3 class="text-sm sm:text-base font-editorial font-bold text-brand-ivory mt-1 leading-snug">${ev.title}</h3>
+                  <p class="text-xs text-brand-body mt-1 leading-relaxed">${ev.desc}</p>
                 </div>
               </div>
             </div>
-          `;
-        });
-        html += `</div>`;
-      }
-
-      container.innerHTML = html;
+          </div>
+        `;
+      }).join('');
     }
 
-    document.getElementById("category-filter").addEventListener("change", (e) => {
+    document.getElementById('category-filter').addEventListener('change', (e) => {
       currentFilter = e.target.value;
       renderTimeline();
     });
 
-    if (window.AndroidBridge && window.AndroidBridge.areAlarmsEnabled) {
-      updateAlarmPillUI(window.AndroidBridge.areAlarmsEnabled());
-    }
-    computeLiveActiveBlock();
+    // Inicialización
     renderDayButtons();
+    computeLiveActiveBlock();
     renderTimeline();
+
+    // Actualización en vivo cada 30 segundos
     setInterval(() => {
       computeLiveActiveBlock();
-      renderTimeline();
+      if (currentDay === getTodayKey()) {
+        renderTimeline();
+      }
     }, 30000);
   </script>
 </body>

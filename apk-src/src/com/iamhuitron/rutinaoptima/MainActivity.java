@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
         RoutineWidgetProvider.updateAllWidgets(this);
 
         webView = new WebView(this);
-        webView.setBackgroundColor(0xFF020617);
+        webView.setBackgroundColor(0xFF0D0C0A);
 
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Rutina Óptima</string>
-    <string name="widget_description">Muestra tu bloque activo (HGH, V-Taper, Trabajo, Uni), progreso en vivo y siguiente actividad en la pantalla de inicio de tu Galaxy S23.</string>
+    <string name="widget_description">Muestra tu bloque activo (HGH, V-Taper, Cursos, Trabajo, Uni), progreso en vivo y siguiente actividad en tu Galaxy S23.</string>
     <style name="Theme.RutinaOptima" parent="@android:style/Theme.DeviceDefault.NoActionBar">
-        <item name="android:statusBarColor">#020617</item>
-        <item name="android:navigationBarColor">#020617</item>
-        <item name="android:windowBackground">#020617</item>
+        <item name="android:statusBarColor">#0D0C0A</item>
+        <item name="android:navigationBarColor">#0D0C0A</item>
+        <item name="android:windowBackground">#0D0C0A</item>
     </style>
 </resources>
