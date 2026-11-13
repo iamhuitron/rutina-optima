@@ -117,6 +117,9 @@
       <button onclick="switchTab('horario')" id="tab-btn-horario" class="tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-gold text-brand-void border border-brand-gold shadow-sm">
         📅 Horario Semanal
       </button>
+      <button onclick="switchTab('meditation')" id="tab-btn-meditation" class="tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-surface text-brand-body hover:text-brand-ivory border border-brand-border">
+        🧘 Meditación & Calma
+      </button>
       <button onclick="switchTab('rules')" id="tab-btn-rules" class="tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-surface text-brand-body hover:text-brand-ivory border border-brand-border">
         ⏰ Anti-9AM & Cursos
       </button>
@@ -226,6 +229,7 @@
           <select id="category-filter" class="bg-brand-void border border-brand-border text-xs rounded-lg px-3 py-1.5 text-brand-ivory focus:outline-none focus:ring-1 focus:ring-brand-gold">
             <option value="all">Todas las actividades</option>
             <option value="courses">🎓 Cursos & Certificaciones</option>
+            <option value="meditation">🧘 Meditación & Calma</option>
             <option value="hgh">💤 Sueño & HGH</option>
             <option value="fitness">🏋️ Ejercicio & Físico</option>
             <option value="care">🍽️ Comidas, Ducha & Aseo</option>
@@ -242,6 +246,151 @@
       <div id="timeline-container" class="space-y-2.5">
         <!-- Inyectado por JS -->
       </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB: ESPACIO DE MEDITACIÓN & CALMA        -->
+    <!-- ========================================== -->
+    <div id="tab-content-meditation" class="tab-pane hidden space-y-6">
+      
+      <!-- Encabezado Bioquímico -->
+      <div class="bg-brand-surface border border-brand-gold/40 rounded-xl p-5">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <h2 class="text-lg font-editorial font-bold text-brand-champagne flex items-center gap-2">
+            <span>🧘 Espacio de Meditación, Mindfulness & Control de Cortisol</span>
+          </h2>
+          <span class="font-code text-[11px] px-2.5 py-1 rounded bg-brand-spruce/60 text-brand-champagne border border-brand-gold/30 font-medium">
+            Anti-Cortisol • Pico HGH • Flow State
+          </span>
+        </div>
+        <p class="text-xs md:text-sm text-brand-body mt-2 leading-relaxed">
+          La meditación y la respiración diafragmática no son solo relajación: son una herramienta neuroquímica precisa. 
+          Al activar el nervio vago y descender el cortisol a cero, <strong class="text-brand-ivory">desbloqueas la secreción natural de Hormona del Crecimiento (HGH)</strong> durante las fases de sueño profundo N3 y sincronizas ondas cerebrales alfa (8–12 Hz) para un estado de flujo profundo en tus cursos y trabajo remoto.
+        </p>
+      </div>
+
+      <!-- Orbe Interactivo de Coherencia Respiratoria -->
+      <div class="bg-brand-elevated border border-brand-gold/40 rounded-2xl p-5 sm:p-7 shadow-2xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-brand-border">
+          <div>
+            <span class="font-code text-[11px] font-bold text-brand-champagne uppercase tracking-wider">EJERCICIO EN VIVO</span>
+            <h3 class="text-base sm:text-lg font-editorial font-bold text-brand-ivory">Orbe de Coherencia Respiratoria</h3>
+          </div>
+          <!-- Selector de Modo de Respiración -->
+          <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs">
+            <button onclick="setBreathingMode('box')" id="breath-mode-box" class="px-3 py-1.5 rounded-lg font-code font-bold bg-brand-gold text-brand-void transition-all">
+              📦 Box (4-4-4-4)
+            </button>
+            <button onclick="setBreathingMode('478')" id="breath-mode-478" class="px-3 py-1.5 rounded-lg font-code font-medium bg-brand-surface text-brand-body hover:text-brand-ivory border border-brand-border transition-all">
+              🌙 4-7-8 (Sueño & HGH)
+            </button>
+            <button onclick="setBreathingMode('sigh')" id="breath-mode-sigh" class="px-3 py-1.5 rounded-lg font-code font-medium bg-brand-surface text-brand-body hover:text-brand-ivory border border-brand-border transition-all">
+              ⚡ Suspiro Neural
+            </button>
+          </div>
+        </div>
+
+        <!-- Área del Orbe Animado -->
+        <div class="py-8 sm:py-12 flex flex-col items-center justify-center text-center relative overflow-hidden">
+          <div id="breath-outer-ring" class="w-64 h-64 sm:w-72 sm:h-72 rounded-full border border-brand-gold/20 flex items-center justify-center transition-all duration-1000">
+            <div id="breath-mid-ring" class="w-48 h-48 sm:w-56 sm:h-56 rounded-full border border-brand-gold/30 flex items-center justify-center transition-all duration-1000">
+              <!-- Orbe central dorado -->
+              <div id="breath-orb" class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-gradient-to-tr from-brand-gold to-brand-champagne shadow-2xl shadow-brand-gold/30 flex flex-col items-center justify-center text-brand-void font-bold transition-all transform duration-1000 scale-100 select-none">
+                <span id="breath-phase-text" class="font-editorial text-sm tracking-wide uppercase">LISTO</span>
+                <span id="breath-timer-text" class="font-code text-2xl font-extrabold mt-0.5">--</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Indicación textual de fase -->
+          <p id="breath-instruction" class="text-xs sm:text-sm font-medium text-brand-champagne mt-5 h-6">
+            Toca "Iniciar Sesión" y sincroniza tu respiración con la pulsación del orbe.
+          </p>
+        </div>
+
+        <!-- Barra de Controles y Métricas de la Sesión -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-brand-border text-xs">
+          <div class="flex items-center gap-3">
+            <button onclick="toggleBreathingSession()" id="breath-play-btn" class="px-5 py-2.5 rounded-xl font-bold bg-brand-gold hover:bg-brand-champagne text-brand-void shadow-lg shadow-brand-gold/20 flex items-center gap-2 transition-all">
+              <span id="breath-play-icon">▶</span> <span id="breath-play-label">Iniciar Sesión</span>
+            </button>
+            <button onclick="toggleZenChimeAudio()" id="breath-sound-btn" class="px-3 py-2.5 rounded-xl bg-brand-surface hover:bg-brand-elevated text-brand-champagne border border-brand-border flex items-center gap-1.5 transition-all">
+              <span id="breath-sound-icon">🔔</span> <span>Campana 432Hz: ON</span>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-4 text-brand-muted font-code text-[11px]">
+            <div class="flex items-center gap-1.5">
+              <span>⏱️ Sesión:</span>
+              <span id="breath-session-timer" class="text-brand-ivory font-bold">05:00</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span>🔄 Ciclos:</span>
+              <span id="breath-cycles-count" class="text-brand-champagne font-bold">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Los 3 Momentos de Meditación en tu Rutina Diaria -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-spruce/40 text-emerald-400 border border-brand-spruce flex items-center justify-center text-lg font-bold">
+            🌙
+          </div>
+          <div>
+            <span class="font-code text-[10px] text-brand-champagne font-bold uppercase">23:00 – 23:15 • NOCHE</span>
+            <h3 class="text-base font-editorial font-bold text-brand-ivory mt-0.5">NSDR & Supresión de Cortisol</h3>
+          </div>
+          <p class="text-brand-body leading-relaxed">
+            El cortisol elevado y la insulina bloquean la liberación de somatropina. 15 minutos de respiración 4-7-8 y escaneo somático en cama desconectan el sistema simpático y preparan el cerebro para entrar directo a sueño profundo N3.
+          </p>
+        </div>
+
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-elevated text-brand-gold border border-brand-gold/40 flex items-center justify-center text-lg font-bold">
+            🌅
+          </div>
+          <div>
+            <span class="font-code text-[10px] text-brand-gold font-bold uppercase">08:10 – 08:20 • MAÑANA</span>
+            <h3 class="text-base font-editorial font-bold text-brand-ivory mt-0.5">Mindfulness Pre-Trabajo</h3>
+          </div>
+          <p class="text-brand-body leading-relaxed">
+            Transición perfecta del esfuerzo físico a la concentración mental. 10 min de Box Breathing (4-4-4-4) limpian la dispersión y sincronizan el ritmo cardíaco para entrar en estado de flujo antes de tus 2.5h laborales.
+          </p>
+        </div>
+
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-burgundy/40 text-brand-champagne border border-brand-burgundy flex items-center justify-center text-lg font-bold">
+            🚌
+          </div>
+          <div>
+            <span class="font-code text-[10px] text-brand-champagne font-bold uppercase">EN TRAYECTO • 15 MIN</span>
+            <h3 class="text-base font-editorial font-bold text-brand-ivory mt-0.5">Descanso Sensorial Acústico</h3>
+          </div>
+          <p class="text-brand-body leading-relaxed">
+            En traslados de más de 2 horas, la saturación de estímulos drena energía vital. Pon audífonos con cancelación de ruido o música binaural en 432 Hz y cierra los ojos 15 minutos para restaurar tu corteza prefrontal.
+          </p>
+        </div>
+      </div>
+
+      <!-- Guía Práctica de Mindfulness Paso a Paso -->
+      <div class="bg-brand-surface border border-brand-border rounded-xl p-5 space-y-3 text-xs">
+        <h3 class="text-base font-editorial font-bold text-brand-ivory flex items-center gap-2">
+          <span>🧠</span> Cómo Meditar de Forma Científica (Sin Misticismo)
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-brand-body">
+          <div class="p-3 bg-brand-void rounded-lg border border-brand-border space-y-1">
+            <strong class="text-brand-champagne font-code">1. El Ancla de la Sensación Física:</strong>
+            <p>No intentes poner la "mente en blanco". Enfoca el 100% de tu atención en la temperatura del aire al entrar por las fosas nasales o en el peso del cuerpo sobre la silla.</p>
+          </div>
+          <div class="p-3 bg-brand-void rounded-lg border border-brand-border space-y-1">
+            <strong class="text-brand-champagne font-code">2. El Músculo del Retorno:</strong>
+            <p>Cada vez que te descubras pensando en la universidad, trabajo o tareas, felicítate por haberlo notado y regresa suavemente la atención a la respiración. Eso es una "repetición" mental.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- ========================================== -->
@@ -505,9 +654,12 @@
   </main>
 
   <!-- Barra de Navegación Inferior Flotante (Móvil) -->
-  <div class="fixed bottom-3 inset-x-3 max-w-md mx-auto glass-nav border border-brand-border rounded-2xl p-2 shadow-2xl z-40 md:hidden flex justify-around text-[10px] text-brand-muted font-medium">
+  <div class="fixed bottom-3 inset-x-3 max-w-lg mx-auto glass-nav border border-brand-border rounded-2xl p-2 shadow-2xl z-40 md:hidden flex justify-around text-[10px] text-brand-muted font-medium">
     <button onclick="switchTab('horario')" id="mob-horario" class="flex flex-col items-center gap-1 text-brand-gold font-bold">
       <span class="text-base">📅</span> Horario
+    </button>
+    <button onclick="switchTab('meditation')" id="mob-meditation" class="flex flex-col items-center gap-1">
+      <span class="text-base">🧘</span> Zen
     </button>
     <button onclick="switchTab('rules')" id="mob-rules" class="flex flex-col items-center gap-1">
       <span class="text-base">⏰</span> Anti-9AM
@@ -547,7 +699,7 @@
         activeBtn.className = "tab-button px-4 py-2 rounded-lg font-semibold transition-all shrink-0 bg-brand-gold text-brand-void border border-brand-gold shadow-sm";
       }
 
-      ['horario', 'rules', 'hgh', 'fitness', 'nutrition'].forEach(id => {
+      ['horario', 'meditation', 'rules', 'hgh', 'fitness', 'nutrition'].forEach(id => {
         const mobEl = document.getElementById('mob-' + id);
         if (mobEl) {
           mobEl.className = (id === tabId)
@@ -572,7 +724,8 @@
           { time: "12:00 – 14:00", sh: 12, sm: 0, eh: 14, em: 0, title: "Traslado Ida (2h) — Videos de Cursos + Lectura", cat: "travel", icon: "📖", desc: "45 min viendo videos descargados de tus cursos + 45 min de lectura." },
           { time: "14:00 – 20:00", sh: 14, sm: 0, eh: 20, em: 0, title: "Universidad (Clases + Biblioteca)", cat: "uni", icon: "🏛️", desc: "14h: Inglés | 16h: Derecho | 18h: Mate III | 19h: Prog III. En huecos (15h y 17h): tareas." },
           { time: "20:00 – 22:30", sh: 20, sm: 0, eh: 22, em: 30, title: "Traslado Vuelta (2.5h) — Siesta 25m / Audio", cat: "travel", icon: "🚌", desc: "Cierra los ojos 25-30 min en el transporte para llegar con menos fatiga acumulada." },
-          { time: "22:30 – 23:15", sh: 22, sm: 30, eh: 23, em: 15, title: "Cena Pro-HGH, Ducha Tibia & S23 a 3 Metros", cat: "care", icon: "🥗", desc: "Proteína + vegetales. Deja tu S23 cargando a 3 metros de la cama." },
+          { time: "22:30 – 23:00", sh: 22, sm: 30, eh: 23, em: 0, title: "Cena Pro-HGH & Ducha Tibia", cat: "care", icon: "🥗", desc: "Proteína + vegetales. Ducha templada para descenso térmico corporal." },
+          { time: "23:00 – 23:15", sh: 23, sm: 0, eh: 23, em: 15, title: "🧘 Espacio de Meditación & NSDR (15m)", cat: "meditation", icon: "🧘", desc: "Respiración 4-7-8, escaneo corporal y supresión de cortisol para disparar el pico de HGH. Deja tu S23 a 3m." },
           { time: "23:15 – 07:00", sh: 23, sm: 15, eh: 7, em: 0, title: "Sueño Profundo (5 Ciclos de 90m = 7.5h)", cat: "hgh", icon: "💤", desc: "5 ciclos completos para despertar en fase ligera sin cansancio a las 07:00." }
         ]
       },
@@ -590,7 +743,8 @@
           { time: "14:00 – 15:00", sh: 14, sm: 0, eh: 15, em: 0, title: "🚀 Hora de Oro en Biblioteca Uni (Proyectos / Cursos)", cat: "projects", icon: "💻", desc: "Llegas a las 14:00 a la facultad: 1h libre antes de Sistemas Operativos para tus proyectos o cursos." },
           { time: "15:00 – 20:00", sh: 15, sm: 0, eh: 20, em: 0, title: "Universidad (Sistemas Op, Metodología, Inf III)", cat: "uni", icon: "🏛️", desc: "Bloque continuo de clases de carrera técnica." },
           { time: "20:00 – 22:30", sh: 20, sm: 0, eh: 22, em: 30, title: "Traslado Vuelta (2.5h) — Siesta 25m / Audio", cat: "travel", icon: "🚌", desc: "Descanso sensorial para recargar el sistema nervioso." },
-          { time: "22:30 – 23:15", sh: 22, sm: 30, eh: 23, em: 15, title: "Cena Pro-HGH, Dead Hang & Celular Lejos", cat: "care", icon: "🥗", desc: "Cero carbohidratos simples, colgarse de la barra y S23 a 3m." },
+          { time: "22:30 – 23:00", sh: 22, sm: 30, eh: 23, em: 0, title: "Cena Pro-HGH & Ducha Tibia", cat: "care", icon: "🥗", desc: "Cero carbohidratos simples, colgarse de la barra y digestión concluida." },
+          { time: "23:00 – 23:15", sh: 23, sm: 0, eh: 23, em: 15, title: "🧘 Espacio de Meditación & NSDR (15m)", cat: "meditation", icon: "🧘", desc: "Respiración 4-7-8 y calma parasimpática para maximizar la HGH nocturna. Dejar S23 a 3m." },
           { time: "23:15 – 07:00", sh: 23, sm: 15, eh: 7, em: 0, title: "Sueño Profundo (7.5h Reparadoras)", cat: "hgh", icon: "💤", desc: "Recuperación hormonal óptima." }
         ]
       },
@@ -607,7 +761,8 @@
           { time: "12:00 – 14:00", sh: 12, sm: 0, eh: 14, em: 0, title: "Traslado Ida (2h) — Videos de Cursos + Lectura", cat: "travel", icon: "📖", desc: "45 min de videos de cursos + 45 min de lectura." },
           { time: "14:00 – 20:00", sh: 14, sm: 0, eh: 20, em: 0, title: "Universidad (Clases + Biblioteca)", cat: "uni", icon: "🏛️", desc: "14h: Inglés | 16h: Derecho | 18h: Mate III | 19h: Prog III." },
           { time: "20:00 – 22:30", sh: 20, sm: 0, eh: 22, em: 30, title: "Traslado Vuelta (2.5h) — Siesta 25m / Audio", cat: "travel", icon: "🚌", desc: "Micro-siesta sensorial." },
-          { time: "22:30 – 23:15", sh: 22, sm: 30, eh: 23, em: 15, title: "Cena Pro-HGH & S23 Lejos", cat: "care", icon: "🥗", desc: "Proteína magra y verduras." },
+          { time: "22:30 – 23:00", sh: 22, sm: 30, eh: 23, em: 0, title: "Cena Pro-HGH & Ducha Tibia", cat: "care", icon: "🥗", desc: "Proteína magra y verduras. Relajación física." },
+          { time: "23:00 – 23:15", sh: 23, sm: 0, eh: 23, em: 15, title: "🧘 Espacio de Meditación & NSDR (15m)", cat: "meditation", icon: "🧘", desc: "Escaneo somático y respiración diafragmática para entrar a fase N3 profunda." },
           { time: "23:15 – 07:00", sh: 23, sm: 15, eh: 7, em: 0, title: "Sueño Profundo (7.5h)", cat: "hgh", icon: "💤", desc: "5 ciclos completos de 90 min." }
         ]
       },
@@ -625,7 +780,8 @@
           { time: "14:00 – 15:00", sh: 14, sm: 0, eh: 15, em: 0, title: "🚀 Hora de Oro en Biblioteca Uni (Proyectos / Cursos)", cat: "projects", icon: "💻", desc: "Llegada al campus a las 14:00: 1 hora de biblioteca de alto foco antes de Sistemas Operativos." },
           { time: "15:00 – 20:00", sh: 15, sm: 0, eh: 20, em: 0, title: "Universidad (Sistemas Op, Metodología, Inf III)", cat: "uni", icon: "🏛️", desc: "Clases vespertinas." },
           { time: "20:00 – 22:30", sh: 20, sm: 0, eh: 22, em: 30, title: "Traslado Vuelta (2.5h) — Siesta 25m / Audio", cat: "travel", icon: "🚌", desc: "Descanso en trayecto." },
-          { time: "22:30 – 23:15", sh: 22, sm: 30, eh: 23, em: 15, title: "Cena Pro-HGH & S23 Lejos", cat: "care", icon: "🥗", desc: "Proteína y vegetales." },
+          { time: "22:30 – 23:00", sh: 22, sm: 30, eh: 23, em: 0, title: "Cena Pro-HGH & Ducha Tibia", cat: "care", icon: "🥗", desc: "Proteína y vegetales. Preparación para descanso profundo." },
+          { time: "23:00 – 23:15", sh: 23, sm: 0, eh: 23, em: 15, title: "🧘 Espacio de Meditación & NSDR (15m)", cat: "meditation", icon: "🧘", desc: "Respiración 4-7-8 para apagar la mente y liberar somatropina sin estrés." },
           { time: "23:15 – 07:00", sh: 23, sm: 15, eh: 7, em: 0, title: "Sueño Profundo (7.5h)", cat: "hgh", icon: "💤", desc: "5 ciclos completos." }
         ]
       },
@@ -641,7 +797,8 @@
           { time: "12:00 – 14:00", sh: 12, sm: 0, eh: 14, em: 0, title: "Traslado Ida (2h) — Lectura", cat: "travel", icon: "📖", desc: "Sesión de lectura en el transporte." },
           { time: "14:00 – 17:30", sh: 14, sm: 0, eh: 17, em: 30, title: "Universidad (Inglés & Mate III)", cat: "uni", icon: "🏛️", desc: "Cierre de semana académica." },
           { time: "17:30 – 20:00", sh: 17, sm: 30, eh: 20, em: 0, title: "Traslado Vuelta Temprano", cat: "travel", icon: "🚌", desc: "¡Llegada a casa a las 20:00!" },
-          { time: "20:00 – 23:30", sh: 20, sm: 0, eh: 23, em: 30, title: "🎉 Noche 100% Libre & Ocio", cat: "leisure", icon: "🎮", desc: "Películas, videojuegos, salir con amigos, relax sin culpa." },
+          { time: "20:00 – 23:15", sh: 20, sm: 0, eh: 23, em: 15, title: "🎉 Noche 100% Libre & Ocio", cat: "leisure", icon: "🎮", desc: "Películas, videojuegos, salir con amigos, relax sin culpa." },
+          { time: "23:15 – 23:30", sh: 23, sm: 15, eh: 23, em: 30, title: "🧘 Meditación & Desconexión Semanal (15m)", cat: "meditation", icon: "🧘", desc: "Cierre de semana laboral y académica. Respiración en calma y gratitud." },
           { time: "23:30 – 08:00", sh: 23, sm: 30, eh: 8, em: 0, title: "Sueño Extendido de Fin de Semana (8.5h)", cat: "hgh", icon: "💤", desc: "Máxima recarga biológica y pago de deuda de sueño." }
         ]
       },
@@ -654,7 +811,8 @@
           { time: "14:15 – 15:15", sh: 14, sm: 15, eh: 15, em: 15, title: "Comida reconfortante & Sobremesa", cat: "care", icon: "🍽️", desc: "Comida relajada sin prisas de traslados." },
           { time: "15:15 – 16:45", sh: 15, sm: 15, eh: 16, em: 45, title: "🎓 Cursos & Certificaciones (Sesión Práctica 1.5h)", cat: "courses", icon: "🎓", desc: "Avance profundo de fin de semana en tus cursos." },
           { time: "16:45 – 18:45", sh: 16, sm: 45, eh: 18, em: 45, title: "🚀 Gran Bloque de Proyectos Personales (2h)", cat: "projects", icon: "💻", desc: "Construcción profunda de tus ideas o aplicaciones." },
-          { time: "18:45 – 23:30", sh: 18, sm: 45, eh: 23, em: 30, title: "🎉 Tarde/Noche Social, Ocio & Hobbies", cat: "leisure", icon: "🍿", desc: "Desconexión total, amigos, familia o entretenimiento." },
+          { time: "18:45 – 23:15", sh: 18, sm: 45, eh: 23, em: 15, title: "🎉 Tarde/Noche Social, Ocio & Hobbies", cat: "leisure", icon: "🍿", desc: "Desconexión total, amigos, familia o entretenimiento." },
+          { time: "23:15 – 23:30", sh: 23, sm: 15, eh: 23, em: 30, title: "🧘 Meditación & Quietud Zen (15m)", cat: "meditation", icon: "🧘", desc: "Silencio mental y respiración diafragmática para descanso muscular." },
           { time: "23:30 – 08:30", sh: 23, sm: 30, eh: 8, em: 30, title: "Sueño Reparador HGH (9 horas)", cat: "hgh", icon: "💤", desc: "Descanso óptimo para regenerar tejido muscular." }
         ]
       },
@@ -669,7 +827,8 @@
           { time: "14:30 – 16:00", sh: 14, sm: 30, eh: 16, em: 0, title: "Comida familiar / Especial", cat: "care", icon: "🍲", desc: "Buena nutrición y convivencia." },
           { time: "16:00 – 19:30", sh: 16, sm: 0, eh: 19, em: 30, title: "Ocio, Videojuegos o Descanso Libre", cat: "leisure", icon: "🎮", desc: "Total libertad creativa o descansar." },
           { time: "19:30 – 20:30", sh: 19, sm: 30, eh: 20, em: 30, title: "Reset Semanal & Dejar S23 a 3m de la cama", cat: "care", icon: "🎒", desc: "Planear tuppers, ropa lista y cargador lejos de la cama." },
-          { time: "20:30 – 22:30", sh: 20, sm: 30, eh: 22, em: 30, title: "Cena ligera & Rutina nocturna", cat: "care", icon: "🥗", desc: "Bajar luces, evitar pantallas para inducir melatonina temprana." },
+          { time: "20:30 – 22:15", sh: 20, sm: 30, eh: 22, em: 15, title: "Cena ligera & Rutina nocturna", cat: "care", icon: "🥗", desc: "Bajar luces, evitar pantallas para inducir melatonina temprana." },
+          { time: "22:15 – 22:30", sh: 22, sm: 15, eh: 22, em: 30, title: "🧘 Meditación & Enfoque Semanal (15m)", cat: "meditation", icon: "🧘", desc: "Visualización de la semana entrante, respiración 4-7-8 y relajación total." },
           { time: "22:30 – 07:00", sh: 22, sm: 30, eh: 7, em: 0, title: "💤 Sueño de 8.5h para Arrancar el Lunes al 100%", cat: "hgh", icon: "🌙", desc: "Dormir temprano el domingo garantiza despertar sin sueño el lunes a las 07:00." }
         ]
       }
@@ -710,6 +869,7 @@
     }
 
     const categoryStyles = {
+      meditation: { bg: "bg-brand-spruce/30", border: "border-brand-gold/50", text: "text-brand-champagne", badge: "Meditación & NSDR" },
       courses: { bg: "bg-brand-elevated", border: "border-brand-gold/60", text: "text-brand-champagne", badge: "Cursos Diarios" },
       hgh: { bg: "bg-brand-surface", border: "border-brand-gold/40", text: "text-brand-champagne", badge: "HGH & Sueño" },
       fitness: { bg: "bg-brand-burgundy/25", border: "border-brand-burgundy", text: "text-brand-champagne", badge: "Físico & Gym" },
@@ -904,6 +1064,187 @@
       currentFilter = e.target.value;
       renderTimeline();
     });
+
+
+    // ==========================================
+    // CONTROLADOR DEL ORBE DE RESPIRACIÓN & ZEN
+    // ==========================================
+    let breathingInterval = null;
+    let breathingMode = 'box'; // 'box', '478', 'sigh'
+    let isBreathingActive = false;
+    let soundEnabled = true;
+    let sessionRemainingSec = 300; // 5 min
+    let completedCycles = 0;
+    let phaseStepIndex = 0;
+    let currentPhaseTimer = 0;
+
+    const breathConfigs = {
+      box: {
+        name: "Box (4-4-4-4)",
+        phases: [
+          { name: "INHALA", duration: 4, instruction: "Inhala profundamente por la nariz expandiendo el abdomen", scale: 1.35, ringOpacity: "1" },
+          { name: "SOSTÉN", duration: 4, instruction: "Mantén el aire con calma, relaja hombros y mandíbula", scale: 1.35, ringOpacity: "0.8" },
+          { name: "EXHALA", duration: 4, instruction: "Exhala suave y continuo por la boca vaciando los pulmones", scale: 0.85, ringOpacity: "0.4" },
+          { name: "VACÍO", duration: 4, instruction: "Pausa en quietud antes de la próxima inhalación", scale: 0.85, ringOpacity: "0.2" }
+        ]
+      },
+      478: {
+        name: "4-7-8 (Sueño & HGH)",
+        phases: [
+          { name: "INHALA", duration: 4, instruction: "Inhala suave por la nariz contando mentalmente 4 segundos", scale: 1.35, ringOpacity: "1" },
+          { name: "RETÉN", duration: 7, instruction: "Retén el oxígeno 7 segundos calmando el ritmo cardíaco", scale: 1.35, ringOpacity: "0.85" },
+          { name: "EXHALA", duration: 8, instruction: "Exhala lento por la boca con sonido suave durante 8 segundos", scale: 0.82, ringOpacity: "0.3" }
+        ]
+      },
+      sigh: {
+        name: "Suspiro Neural",
+        phases: [
+          { name: "INHALA 1", duration: 2, instruction: "Inhalación nasal profunda llenando el 80% de los pulmones", scale: 1.2, ringOpacity: "0.8" },
+          { name: "INHALA 2", duration: 1.5, instruction: "Segunda inhalación rápida completando la máxima capacidad", scale: 1.38, ringOpacity: "1" },
+          { name: "EXHALA", duration: 6, instruction: "Exhalación prolongada y suspirada por la boca", scale: 0.82, ringOpacity: "0.3" },
+          { name: "CALMA", duration: 2, instruction: "Siente el alivio parasimpático inmediato", scale: 0.85, ringOpacity: "0.4" }
+        ]
+      }
+    };
+
+    function playZenChime() {
+      if (!soundEnabled) return;
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(432, ctx.currentTime); // Frecuencia armónica 432 Hz
+        gain.gain.setValueAtTime(0.001, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.25, ctx.currentTime + 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 2.4);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 2.5);
+      } catch (e) {}
+    }
+
+    function toggleZenChimeAudio() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById('breath-sound-btn');
+      btn.innerHTML = soundEnabled
+        ? '<span>🔔</span> <span>Campana 432Hz: ON</span>'
+        : '<span>🔕</span> <span class="text-brand-muted">Campana: OFF</span>';
+      if (soundEnabled) playZenChime();
+    }
+
+    function setBreathingMode(mode) {
+      breathingMode = mode;
+      ['box', '478', 'sigh'].forEach(m => {
+        const b = document.getElementById('breath-mode-' + m);
+        if (b) {
+          b.className = (m === mode)
+            ? "px-3 py-1.5 rounded-lg font-code font-bold bg-brand-gold text-brand-void transition-all"
+            : "px-3 py-1.5 rounded-lg font-code font-medium bg-brand-surface text-brand-body hover:text-brand-ivory border border-brand-border transition-all";
+        }
+      });
+      resetBreathingCycle();
+    }
+
+    function resetBreathingCycle() {
+      phaseStepIndex = 0;
+      const cfg = breathConfigs[breathingMode];
+      currentPhaseTimer = cfg.phases[0].duration;
+      updateBreathingVisuals(cfg.phases[0], currentPhaseTimer);
+    }
+
+    function updateBreathingVisuals(phase, remainingSec) {
+      const orb = document.getElementById('breath-orb');
+      const midRing = document.getElementById('breath-mid-ring');
+      const outerRing = document.getElementById('breath-outer-ring');
+      const phaseText = document.getElementById('breath-phase-text');
+      const timerText = document.getElementById('breath-timer-text');
+      const instruction = document.getElementById('breath-instruction');
+
+      if (orb) {
+        orb.style.transform = `scale(${phase.scale})`;
+      }
+      if (midRing) {
+        midRing.style.opacity = phase.ringOpacity;
+      }
+      if (outerRing) {
+        outerRing.style.opacity = phase.ringOpacity;
+      }
+      if (phaseText) {
+        phaseText.textContent = phase.name;
+      }
+      if (timerText) {
+        timerText.textContent = Math.ceil(remainingSec) + "s";
+      }
+      if (instruction) {
+        instruction.textContent = phase.instruction;
+      }
+    }
+
+    function toggleBreathingSession() {
+      if (isBreathingActive) {
+        pauseBreathingSession();
+      } else {
+        startBreathingSession();
+      }
+    }
+
+    function startBreathingSession() {
+      isBreathingActive = true;
+      document.getElementById('breath-play-icon').textContent = "⏸";
+      document.getElementById('breath-play-label').textContent = "Pausar Sesión";
+      playZenChime();
+
+      const cfg = breathConfigs[breathingMode];
+      if (currentPhaseTimer <= 0) {
+        currentPhaseTimer = cfg.phases[phaseStepIndex].duration;
+      }
+      updateBreathingVisuals(cfg.phases[phaseStepIndex], currentPhaseTimer);
+
+      if (breathingInterval) clearInterval(breathingInterval);
+      breathingInterval = setInterval(() => {
+        currentPhaseTimer -= 0.5;
+
+        if (sessionRemainingSec > 0) {
+          sessionRemainingSec -= 0.5;
+          const mins = Math.floor(sessionRemainingSec / 60);
+          const secs = Math.floor(sessionRemainingSec % 60);
+          document.getElementById('breath-session-timer').textContent = 
+            `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }
+
+        if (currentPhaseTimer <= 0) {
+          phaseStepIndex++;
+          if (phaseStepIndex >= cfg.phases.length) {
+            phaseStepIndex = 0;
+            completedCycles++;
+            document.getElementById('breath-cycles-count').textContent = completedCycles;
+          }
+          const nextPhase = cfg.phases[phaseStepIndex];
+          currentPhaseTimer = nextPhase.duration;
+          updateBreathingVisuals(nextPhase, currentPhaseTimer);
+          if (nextPhase.name.startsWith("INHALA")) {
+            playZenChime();
+          }
+        } else {
+          const curPhase = cfg.phases[phaseStepIndex];
+          document.getElementById('breath-timer-text').textContent = Math.ceil(currentPhaseTimer) + "s";
+        }
+      }, 500);
+    }
+
+    function pauseBreathingSession() {
+      isBreathingActive = false;
+      document.getElementById('breath-play-icon').textContent = "▶";
+      document.getElementById('breath-play-label').textContent = "Reanudar";
+      if (breathingInterval) {
+        clearInterval(breathingInterval);
+        breathingInterval = null;
+      }
+    }
 
     // Inicialización
     renderDayButtons();
